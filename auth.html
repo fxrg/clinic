@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Register or Login to Clinic Scholar — Access the University Clinical Standard appointment system."/>
+  <title>Clinic Scholar | Login &amp; Register</title>
+
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1"/>
+</head>
+<body>
+
+<!-- ══════════════════════════════════
+     NAVIGATION
+══════════════════════════════════ -->
+<header class="navbar">
+  <div class="navbar-inner">
+    <a href="index.html" class="navbar-brand">Clinic Scholar</a>
+    <div class="navbar-actions">
+      <a href="index.html" class="btn btn-ghost btn-sm">&larr; Back to Home</a>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════
+     AUTH SPLIT LAYOUT
+══════════════════════════════════ -->
+<main style="padding-top:80px;">
+  <div class="auth-wrapper">
+
+    <!-- LEFT PANEL — Register Form -->
+    <div class="auth-panel-left" id="register-section">
+      <!-- Background image overlay -->
+      <div class="overlay-image">
+        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80" alt="Clinical facility"/>
+      </div>
+
+      <!-- Register Card -->
+      <div style="position:relative; z-index:1; width:100%; max-width:480px;">
+        <div style="margin-bottom:2.5rem;">
+          <h1 style="font-size:2.25rem; font-weight:900; letter-spacing:-0.03em; margin-bottom:1rem;">Join the Scholar Network</h1>
+          <p style="color:var(--on-surface-variant); line-height:1.7;">Access the University Clinical Standard for streamlined healthcare management and peer-reviewed clinical scheduling.</p>
+        </div>
+
+        <!-- Server-Side Error Display (populated via URL param by PHP, shown via JS) -->
+        <div id="register-error-box" class="form-error-box" style="display:none;">
+          <p>Please fix the following errors:</p>
+          <ul id="register-error-list"></ul>
+        </div>
+
+        <!-- REGISTER FORM -->
+        <div style="background:var(--surface-container-lowest); padding:2.5rem; border-radius:0.75rem; box-shadow:var(--shadow-card); outline:1px solid rgba(171,179,183,0.15);">
+          <h2 style="font-family:var(--font-headline); font-size:1.25rem; font-weight:800; margin-bottom:2rem; color:var(--primary);">Register</h2>
+
+          <form id="registerForm" action="register.php" method="POST" novalidate>
+            <input type="hidden" name="action" value="register"/>
+
+            <div class="form-group" style="margin-bottom:1.5rem;">
+              <label class="form-label" for="reg-name">Full Name</label>
+              <input id="reg-name" class="form-input" name="full_name" type="text"
+                     placeholder="Your Full Name" autocomplete="name"/>
+            </div>
+
+            <div class="form-group" style="margin-bottom:1.5rem;">
+              <label class="form-label" for="reg-email">Email Address</label>
+              <input id="reg-email" class="form-input" name="email" type="email"
+                     placeholder="your.email@university.edu" autocomplete="email"/>
+            </div>
+
+            <div class="form-group" style="margin-bottom:1.5rem;">
+              <label class="form-label" for="reg-pass">Password</label>
+              <input id="reg-pass" class="form-input" name="password" type="password"
+                     placeholder="At least 8 characters" autocomplete="new-password"/>
+            </div>
+
+            <div class="form-group" style="margin-bottom:2rem;">
+              <label class="form-label" for="reg-confirm">Confirm Password</label>
+              <input id="reg-confirm" class="form-input" name="confirm_password" type="password"
+                     placeholder="Repeat your password" autocomplete="new-password"/>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-full">
+              Create Scholar Account
+            </button>
+          </form>
+        </div>
+      </div>
+    </div><!-- /auth-panel-left -->
+
+    <!-- RIGHT PANEL — Login Form -->
+    <div class="auth-panel-right" id="login-section">
+      <div style="width:100%; max-width:420px; background:rgba(255,255,255,0.09); backdrop-filter:blur(20px); padding:4px; border-radius:1.25rem; box-shadow:var(--shadow-modal);">
+        <div style="background:var(--surface-container-lowest); padding:3rem; border-radius:1.125rem;">
+
+          <!-- Icon -->
+          <div style="display:flex; justify-content:center; margin-bottom:2.5rem;">
+            <div style="width:4rem; height:4rem; border-radius:50%; background:var(--primary-container); display:flex; align-items:center; justify-content:center;">
+              <span class="material-symbols-outlined" style="color:var(--primary); font-size:2rem;">lock_open</span>
+            </div>
+          </div>
+
+          <div style="text-align:center; margin-bottom:2.5rem;">
+            <h2 style="font-family:var(--font-headline); font-size:2rem; font-weight:900; letter-spacing:-0.04em; margin-bottom:0.5rem;">Sign In</h2>
+            <p style="color:var(--on-surface-variant); font-size:0.875rem;">Welcome back to the Disciplined Curator system.</p>
+          </div>
+
+          <!-- Login error box (JS-populated) -->
+          <div id="login-error-box" class="form-error-box" style="display:none;">
+            <ul id="login-error-list"></ul>
+          </div>
+
+          <!-- LOGIN FORM -->
+          <form id="loginForm" action="login.php" method="POST" novalidate>
+            <input type="hidden" name="action" value="login"/>
+
+            <div class="form-group" style="margin-bottom:1.5rem;">
+              <label class="form-label" for="login-email">Email Address</label>
+              <div class="input-icon-wrapper">
+                <span class="material-symbols-outlined input-icon">person</span>
+                <input id="login-email" class="form-input with-icon" name="email" type="email"
+                       placeholder="your.email@university.edu" autocomplete="email"/>
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-bottom:0.75rem;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+                <label class="form-label" for="login-pass">Password</label>
+                <a href="#" style="font-size:0.65rem; font-weight:800; color:var(--primary); text-transform:uppercase; letter-spacing:0.1em;">Forgot?</a>
+              </div>
+              <div class="input-icon-wrapper">
+                <span class="material-symbols-outlined input-icon">key</span>
+                <input id="login-pass" class="form-input with-icon" name="password" type="password"
+                       placeholder="••••••••" autocomplete="current-password"/>
+              </div>
+            </div>
+
+            <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:1.75rem;">
+              <input type="checkbox" id="remember" name="remember"
+                     style="width:1rem; height:1rem; accent-color:var(--primary);"/>
+              <label for="remember" style="font-size:0.75rem; color:var(--on-surface-variant); cursor:pointer;">
+                Keep me signed in for 30 days
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-full">
+              Sign In to Dashboard
+            </button>
+          </form>
+
+          <!-- Demo credentials hint -->
+          <p style="text-align:center; font-size:0.75rem; color:var(--on-surface-variant); margin-top:1.5rem;">
+            Demo: <strong>demo@clinic.edu</strong> / <strong>Password123</strong>
+          </p>
+
+          <!-- Mobile: Register link -->
+          <div style="margin-top:2rem; padding-top:2rem; border-top:1px solid var(--surface-container); display:none;" id="mobile-register-link">
+            <p style="text-align:center; font-size:0.75rem; color:var(--on-surface-variant); margin-bottom:1rem;">Don't have an account?</p>
+            <a href="#register-section" class="btn btn-secondary btn-full btn-sm" style="text-align:center; justify-content:center;">
+              Register Now
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div><!-- /auth-panel-right -->
+
+  </div>
+</main>
+
+<!-- ══════════════════════════════════
+     FOOTER
+══════════════════════════════════ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-brand" style="font-size:1rem;">
+      &copy; 2026 University Clinical Standard. The Disciplined Curator System.
+    </div>
+    <ul class="footer-links">
+      <li><a href="#">Contact Support</a></li>
+      <li><a href="#">Privacy Policy</a></li>
+    </ul>
+  </div>
+</footer>
+
+<!-- Page-specific JavaScript -->
+<script src="auth.js"></script>
+
+</body>
+</html>

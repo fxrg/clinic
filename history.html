@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="View and manage your appointment history on Clinic Scholar."/>
+  <title>Clinic Scholar | Appointment History</title>
+
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1"/>
+</head>
+<body>
+
+<!-- ══════════════════════════════════
+     NAVIGATION
+══════════════════════════════════ -->
+<header class="navbar">
+  <div class="navbar-inner">
+    <a href="index.html" class="navbar-brand">Clinic Scholar</a>
+    <nav>
+      <ul class="navbar-nav">
+        <li><a href="index.html"   class="nav-link">Home</a></li>
+        <li><a href="doctors.html" class="nav-link">Doctors</a></li>
+        <li><a href="book.html"    class="nav-link">Book</a></li>
+        <li><a href="history.html" class="nav-link active">History</a></li>
+      </ul>
+    </nav>
+    <div class="navbar-actions">
+      <span style="font-size:0.875rem; color:var(--on-surface-variant);" id="nav-user-name"></span>
+      <button onclick="handleLogout()" class="btn btn-outline btn-sm">Logout</button>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════
+     TOAST NOTIFICATION
+══════════════════════════════════ -->
+<div id="toast" class="toast" style="display:none;"></div>
+
+<main style="padding-top:80px;">
+  <div class="container" style="padding-top:4rem; padding-bottom:6rem;">
+
+    <!-- ── Page Header ──────────────────────────────────── -->
+    <header style="margin-bottom:3rem;">
+      <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-end; gap:1.5rem;">
+        <div>
+          <h1 style="font-size:clamp(1.75rem,3.5vw,2.5rem); font-weight:900; letter-spacing:-0.03em; margin-bottom:0.5rem;">
+            Appointment History
+          </h1>
+          <p style="color:var(--on-surface-variant); max-width:520px;">
+            Review your clinical records, track upcoming sessions, and manage your health journey.
+          </p>
+        </div>
+        <div style="display:flex; flex-wrap:wrap; gap:0.75rem; align-items:center;">
+          <div style="background:var(--surface-container-low); padding:0.6rem 1rem; border-radius:0.75rem; display:flex; align-items:center; gap:0.5rem;">
+            <span class="material-symbols-outlined" style="color:var(--primary); font-size:1.25rem;">calendar_today</span>
+            <span style="font-size:0.875rem; font-weight:700;">Total: <span id="stat-total">0</span></span>
+          </div>
+          <div style="background:var(--surface-container-low); padding:0.6rem 1rem; border-radius:0.75rem; display:flex; align-items:center; gap:0.5rem;">
+            <span class="material-symbols-outlined" style="color:var(--tertiary); font-size:1.25rem;">pending_actions</span>
+            <span style="font-size:0.875rem; font-weight:700;">Upcoming: <span id="stat-upcoming">0</span></span>
+          </div>
+          <a href="book.html" class="btn btn-primary btn-sm">
+            <span class="material-symbols-outlined">add</span> New Booking
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- ── Main Layout: Sidebar + Table ─────────────────── -->
+    <div style="display:grid; grid-template-columns:1fr; gap:2rem;">
+
+      <!-- SIDEBAR -->
+      <aside style="display:flex; flex-direction:column; gap:1.5rem;" id="sidebar-content">
+        <!-- Populated by history.js -->
+        <div style="background:var(--surface-container-low); padding:2rem; border-radius:1rem; text-align:center;">
+          <span class="material-symbols-outlined" style="font-size:3rem; color:var(--outline-variant); display:block; margin-bottom:0.75rem;">hourglass_empty</span>
+          <p style="font-size:0.875rem; color:var(--on-surface-variant);">Loading your appointments...</p>
+        </div>
+      </aside>
+
+      <!-- TABLE SECTION -->
+      <section>
+        <div style="background:var(--surface-container-low); border-radius:1rem; overflow:hidden;">
+
+          <!-- Table Header & Filter Tabs -->
+          <div style="padding:1.5rem 2rem; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:1rem; border-bottom:1px solid rgba(171,179,183,0.08);">
+            <h2 style="font-family:var(--font-headline); font-size:1.25rem; font-weight:800;">Visit Logs</h2>
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap;" id="statusTabs">
+              <button class="chip chip-active tab-btn" data-status="all">All</button>
+              <button class="chip chip-default tab-btn" data-status="Pending">Pending</button>
+              <button class="chip chip-default tab-btn" data-status="Confirmed">Confirmed</button>
+              <button class="chip chip-default tab-btn" data-status="Completed">Completed</button>
+              <button class="chip chip-default tab-btn" data-status="Cancelled">Cancelled</button>
+            </div>
+          </div>
+
+          <div style="overflow-x:auto;">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Doctor &amp; Specialty</th>
+                  <th>Date &amp; Time</th>
+                  <th>Notes</th>
+                  <th>Status</th>
+                  <th style="text-align:right;">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="appointmentsTableBody">
+                <!-- Populated by history.js -->
+                <tr id="empty-row">
+                  <td colspan="5" style="padding:4rem; text-align:center; color:var(--on-surface-variant);">
+                    <span class="material-symbols-outlined" style="font-size:3rem; display:block; margin-bottom:0.75rem; color:var(--outline-variant);">hourglass_empty</span>
+                    Loading...
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Table Footer -->
+          <div style="padding:1rem 2rem; display:flex; justify-content:space-between; align-items:center; background:rgba(227,233,236,0.25);" id="table-footer">
+            <span style="font-size:0.75rem; font-weight:700; color:var(--on-surface-variant);" id="footer-count"></span>
+            <a href="book.html" style="color:var(--primary); font-size:0.75rem; font-weight:700; display:inline-flex; align-items:center; gap:0.25rem;">
+              <span class="material-symbols-outlined" style="font-size:1rem;">add_circle</span> Book New Appointment
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /main grid -->
+  </div>
+</main>
+
+<!-- ══════════════════════════════════
+     RESCHEDULE MODAL
+══════════════════════════════════ -->
+<div class="modal-overlay" id="rescheduleModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('rescheduleModal')">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+    <h3 style="font-family:var(--font-headline); font-size:1.375rem; font-weight:800; margin-bottom:0.5rem;">Reschedule Appointment</h3>
+    <p style="color:var(--on-surface-variant); font-size:0.875rem; margin-bottom:2rem;">Choose a new date and time for your visit.</p>
+
+    <div class="form-group" style="margin-bottom:1.5rem;">
+      <label class="form-label" for="new-date">New Date</label>
+      <input type="date" id="new-date" class="form-input" style="margin-top:0.5rem;"/>
+    </div>
+    <div class="form-group" style="margin-bottom:2rem;">
+      <label class="form-label" for="new-time">New Time</label>
+      <select id="new-time" class="form-input" style="margin-top:0.5rem;">
+        <option value="09:00:00">09:00 AM</option>
+        <option value="09:30:00">09:30 AM</option>
+        <option value="10:00:00">10:00 AM</option>
+        <option value="10:30:00">10:30 AM</option>
+        <option value="11:00:00">11:00 AM</option>
+        <option value="11:30:00">11:30 AM</option>
+        <option value="14:00:00">02:00 PM</option>
+        <option value="14:30:00">02:30 PM</option>
+        <option value="15:00:00">03:00 PM</option>
+        <option value="15:30:00">03:30 PM</option>
+        <option value="16:00:00">04:00 PM</option>
+      </select>
+    </div>
+    <div style="display:flex; gap:1rem;">
+      <button type="button" onclick="closeModal('rescheduleModal')" class="btn btn-outline btn-full">Cancel</button>
+      <button type="button" onclick="saveReschedule()" class="btn btn-primary btn-full">Save Changes</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     DELETE CONFIRMATION MODAL
+══════════════════════════════════ -->
+<div class="modal-overlay" id="deleteModal">
+  <div class="modal-box" style="text-align:center;">
+    <div style="width:4rem; height:4rem; background:#fef2f2; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 1.5rem;">
+      <span class="material-symbols-outlined" style="color:#dc2626; font-size:2rem;">delete_forever</span>
+    </div>
+    <h3 style="font-family:var(--font-headline); font-size:1.25rem; font-weight:800; margin-bottom:0.5rem;">Cancel Appointment?</h3>
+    <p style="color:var(--on-surface-variant); font-size:0.875rem; margin-bottom:0.5rem;">You are about to cancel your appointment with</p>
+    <p style="font-weight:800; font-size:1rem; margin-bottom:0.75rem;" id="delete-doctor-name"></p>
+    <p style="font-size:0.75rem; color:var(--outline); margin-bottom:2rem;">This action is permanent and cannot be undone.</p>
+    <div style="display:flex; gap:1rem;">
+      <button type="button" onclick="closeModal('deleteModal')" class="btn btn-outline btn-full">Keep It</button>
+      <button type="button" onclick="confirmDelete()" class="btn btn-danger btn-full">Yes, Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-brand">CLINIC SCHOLAR</div>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="doctors.html">Doctors</a></li>
+      <li><a href="book.html">Book</a></li>
+      <li><a href="#">Privacy</a></li>
+    </ul>
+    <div class="footer-copy">&copy; 2026 University Clinical Standard.<br/>The Disciplined Curator System.</div>
+  </div>
+</footer>
+
+<script src="history.js"></script>
+</body>
+</html>

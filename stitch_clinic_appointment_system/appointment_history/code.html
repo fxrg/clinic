@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-container": "#e2e2e9",
+                    "tertiary-fixed-dim": "#c7c3e3",
+                    "on-secondary-container": "#505157",
+                    "primary-fixed": "#d7e2ff",
+                    "on-tertiary": "#fcf7ff",
+                    "on-surface": "#2b3437",
+                    "surface-container-highest": "#dbe4e7",
+                    "background": "#f8f9fa",
+                    "on-primary-container": "#004fa6",
+                    "on-tertiary-fixed": "#35334d",
+                    "on-primary-fixed-variant": "#0959b6",
+                    "tertiary-fixed": "#d5d1f2",
+                    "on-background": "#2b3437",
+                    "error": "#9f403d",
+                    "outline": "#737c7f",
+                    "surface-container-high": "#e3e9ec",
+                    "surface-tint": "#115cb9",
+                    "on-secondary": "#f9f8ff",
+                    "on-secondary-fixed": "#3d3f45",
+                    "on-tertiary-fixed-variant": "#52506b",
+                    "primary-fixed-dim": "#c2d5ff",
+                    "surface-container-low": "#f1f4f6",
+                    "primary-container": "#d7e2ff",
+                    "primary": "#115cb9",
+                    "surface-dim": "#d1dce0",
+                    "surface-container": "#eaeff1",
+                    "on-error": "#fff7f6",
+                    "inverse-primary": "#659dfe",
+                    "surface": "#f8f9fa",
+                    "secondary-fixed-dim": "#d4d4db",
+                    "inverse-surface": "#0c0f10",
+                    "surface-bright": "#f8f9fa",
+                    "on-surface-variant": "#586064",
+                    "secondary-dim": "#515359",
+                    "on-primary": "#f7f7ff",
+                    "surface-variant": "#dbe4e7",
+                    "tertiary-container": "#d5d1f2",
+                    "outline-variant": "#abb3b7",
+                    "tertiary-dim": "#52506b",
+                    "inverse-on-surface": "#9b9d9e",
+                    "tertiary": "#5e5c78",
+                    "secondary": "#5d5f65",
+                    "error-dim": "#4e0309",
+                    "on-primary-fixed": "#003d83",
+                    "error-container": "#fe8983",
+                    "primary-dim": "#0050a7",
+                    "on-secondary-fixed-variant": "#5a5b61",
+                    "on-tertiary-container": "#484661",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed": "#e2e2e9",
+                    "on-error-container": "#752121"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Public Sans"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Public Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#f8f9fa]/80 backdrop-blur-lg shadow-sm">
+<div class="flex justify-between items-center h-20 px-12 max-w-[1440px] mx-auto">
+<div class="text-xl font-bold tracking-tighter text-blue-800">Clinic Scholar</div>
+<div class="hidden md:flex items-center gap-8 font-['Public_Sans'] text-sm tracking-tight">
+<a class="text-slate-600 font-medium hover:text-blue-500 transition-colors duration-150" href="#">Home</a>
+<a class="text-slate-600 font-medium hover:text-blue-500 transition-colors duration-150" href="#">Doctors</a>
+<a class="text-slate-600 font-medium hover:text-blue-500 transition-colors duration-150" href="#">Appointments</a>
+<a class="text-blue-700 font-semibold border-b-2 border-blue-700 pb-1 hover:text-blue-500 transition-colors duration-150" href="#">History</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-slate-600 font-medium text-sm px-4 py-2 transition-transform scale-95 active:opacity-80">Login</button>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-xl font-semibold text-sm transition-transform scale-95 active:opacity-80">Register</button>
+</div>
+</div>
+<div class="bg-[#f1f4f6] h-[1px] w-full absolute bottom-0 opacity-10"></div>
+</nav>
+<main class="pt-32 pb-24 px-6 md:px-12 max-w-[1440px] mx-auto">
+<!-- Hero Header Section -->
+<header class="mb-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<h1 class="text-4xl font-extrabold tracking-tight text-on-surface mb-2">Appointment History</h1>
+<p class="text-on-surface-variant max-w-xl font-medium">Review your clinical records, track upcoming sessions, and manage your health journey through our disciplined curator system.</p>
+</div>
+<div class="flex gap-3">
+<div class="bg-surface-container-low px-4 py-2 rounded-xl flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="calendar_today">calendar_today</span>
+<span class="text-sm font-semibold">Total Visits: 14</span>
+</div>
+<div class="bg-surface-container-low px-4 py-2 rounded-xl flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary" data-icon="pending_actions">pending_actions</span>
+<span class="text-sm font-semibold text-on-surface">Upcoming: 2</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Layout: Asymmetric Bento Grid for Highlights & Table -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Sidebar: Quick Stats & Next Appointment -->
+<aside class="lg:col-span-4 space-y-8">
+<!-- Next Appointment Card (Glassmorphism inspired) -->
+<div class="relative overflow-hidden bg-primary p-8 rounded-xl text-on-primary shadow-lg group">
+<div class="absolute -right-12 -top-12 w-48 h-48 bg-white/10 rounded-full blur-3xl group-hover:bg-white/20 transition-all duration-500"></div>
+<div class="relative z-10">
+<span class="text-xs uppercase tracking-widest font-bold opacity-80">Upcoming Priority</span>
+<h2 class="text-2xl font-bold mt-2 mb-6">General Consultation</h2>
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-white/70" data-icon="person">person</span>
+<span class="font-medium text-lg">Dr. Elena Rodriguez</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-white/70" data-icon="schedule">schedule</span>
+<span class="font-medium">Oct 24, 2024 • 10:30 AM</span>
+</div>
+</div>
+<button class="mt-8 w-full bg-white text-primary py-3 rounded-xl font-bold hover:bg-surface transition-colors">
+                            Reschedule
+                        </button>
+</div>
+</div>
+<!-- Health Insights Section -->
+<div class="bg-surface-container-low p-8 rounded-xl">
+<h3 class="text-sm font-bold uppercase tracking-widest text-on-surface-variant mb-6">Patient Summary</h3>
+<div class="space-y-6">
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant text-sm font-medium">Compliance Rate</span>
+<span class="text-primary font-bold text-lg">98%</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[98%]"></div>
+</div>
+<div class="pt-4 space-y-4">
+<div class="flex items-start gap-4">
+<div class="p-2 bg-tertiary-container rounded-lg">
+<span class="material-symbols-outlined text-on-tertiary-container" data-icon="receipt_long">receipt_long</span>
+</div>
+<div>
+<p class="text-sm font-bold">Latest Report</p>
+<p class="text-xs text-on-surface-variant">Annual Screening Result.pdf</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="p-2 bg-secondary-container rounded-lg">
+<span class="material-symbols-outlined text-on-secondary-container" data-icon="vaccines">vaccines</span>
+</div>
+<div>
+<p class="text-sm font-bold">Immunization</p>
+<p class="text-xs text-on-surface-variant">Updated on Sept 12</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Right: Detailed History Table -->
+<section class="lg:col-span-8">
+<div class="bg-surface-container-low rounded-xl overflow-hidden">
+<div class="p-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-outline-variant/10">
+<h2 class="text-xl font-bold tracking-tight">Visit Logs</h2>
+<div class="flex gap-2">
+<button class="bg-primary-container text-on-primary-container px-4 py-1.5 rounded-full text-xs font-bold">All</button>
+<button class="bg-secondary-fixed text-on-secondary-fixed px-4 py-1.5 rounded-full text-xs font-bold hover:bg-secondary-container transition-colors">Pending</button>
+<button class="bg-secondary-fixed text-on-secondary-fixed px-4 py-1.5 rounded-full text-xs font-bold hover:bg-secondary-container transition-colors">Completed</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-high/50">
+<th class="px-8 py-4 text-[10px] uppercase tracking-[0.15em] font-black text-on-surface-variant">Doctor &amp; Specialty</th>
+<th class="px-8 py-4 text-[10px] uppercase tracking-[0.15em] font-black text-on-surface-variant">Date &amp; Time</th>
+<th class="px-8 py-4 text-[10px] uppercase tracking-[0.15em] font-black text-on-surface-variant">Status</th>
+<th class="px-8 py-4 text-[10px] uppercase tracking-[0.15em] font-black text-on-surface-variant text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/5">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-lowest transition-colors group">
+<td class="px-8 py-6">
+<div class="flex items-center gap-4">
+<div class="relative w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden">
+<img alt="Portrait" class="w-full h-full object-cover" data-alt="Close-up professional portrait of a male doctor in clinical attire with soft warm natural studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsUGmrSMlw7cxU1EzMbeWYOT-yfaZclKbPKkmhGec3XA-kW5cDyETEs_XoEOJlKVyJZSUBInYX5EFKh0tLSzNGKGzhna5sMTjDip8g0L3zIrJKLNL6x8p4SGTDjCoqlJgKW3MrKovdP0QfPmf2vrzZtZtuSWO0m_T0sjdnqMmKNhDeXl9rFnCjhuEgeF6KkMHbkowID35vdPxLS77J1A0QwxFf8CStrH0QbvVpEGwKTozbBv0UcU79NPe5mbzPNHKg67-ORON-RXg"/>
+</div>
+<div class="flex flex-col">
+<span class="font-bold text-sm text-on-surface">Dr. Elena Rodriguez</span>
+<span class="text-xs text-on-surface-variant">General Practitioner</span>
+</div>
+</div>
+</td>
+<td class="px-8 py-6">
+<div class="flex flex-col">
+<span class="text-sm font-semibold">Oct 24, 2024</span>
+<span class="text-xs text-on-surface-variant font-medium">10:30 AM</span>
+</div>
+</td>
+<td class="px-8 py-6">
+<div class="flex items-center gap-2">
+<div class="w-1.5 h-4 rounded-full bg-primary"></div>
+<span class="text-xs font-bold text-primary">Confirmed</span>
+</div>
+</td>
+<td class="px-8 py-6 text-right">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors" data-icon="more_vert">more_vert</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-lowest transition-colors group">
+<td class="px-8 py-6">
+<div class="flex items-center gap-4">
+<div class="relative w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden">
+<img alt="Portrait" class="w-full h-full object-cover" data-alt="Close-up professional portrait of a female cardiologist in clinical attire with bright surgical room lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgbPRZc6F1_RDjjfapQl_H5AoD-WsqLvsv-cAHJfQrErAFM1aBEV95hE1xxx0BneZcgVWvf9vof43mzKeGyPHnyfG7Zsj4NERuzRM17KKPkPn-zdeNt4AeqWSLXykO9KryvqrYaZKQlDKKTHWJ8IGOk8H9uLgr-bhZfz0ZyugQ1rmKdqGu5iSWUhBThj8FwNFMLwQfISQHE0U4UuCIa_MRMvfZLAtHEJ731vX0Ux0ZerPxRkMhLO1O6PuegUCgKLOuWxVE0txlvOg"/>
+</div>
+<div class="flex flex-col">
+<span class="font-bold text-sm text-on-surface">Dr. Marcus Thorne</span>
+<span class="text-xs text-on-surface-variant">Cardiology</span>
+</div>
+</div>
+</td>
+<td class="px-8 py-6">
+<div class="flex flex-col">
+<span class="text-sm font-semibold">Oct 28, 2024</span>
+<span class="text-xs text-on-surface-variant font-medium">02:15 PM</span>
+</div>
+</td>
+<td class="px-8 py-6">
+<div class="flex items-center gap-2">
+<div class="w-1.5 h-4 rounded-full bg-tertiary"></div>
+<span class="text-xs font-bold text-tertiary">Pending</span>
+</div>
+</td>
+<td class="px-8 py-6 text-right">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors" data-icon="more_vert">more_vert</button>
+</td>
+</tr>
+<!-- Row 3 (Past) -->
+<tr class="hover:bg-surface-container-lowest transition-colors group opacity-75 hover:opacity-100">
+<td class="px-8 py-6">
+<div class="flex items-center gap-4">
+<div class="relative w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden grayscale">
+<img alt="Portrait" class="w-full h-full object-cover" data-alt="Professional portrait of a middle-aged medical specialist in a modern clean clinic environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgCqbYhKtLSBGMptSat4l5slUOlnF29Le48Z4N5V6HvVOgfgpJwb61sRiQMZvy3kRfKJjN7Kxlt4KdXItpcfYzt8aGFuASUhmJCZmmmswYZXAbZUUHgs13dBAxg2lS7BOgBsviZH8OZbHtB4a4FCGOH1KwB5tuWFg3ioEJvXL-PsE89_95kzQXynWzr_N83rwQcNO4h72nQE7QzG3ZbuS6fJIYiPIt9t9a2ma_MhAZvOndBv5l2d486u4NrryJW6lrRk50gPZMpz8"/>
+</div>
+<div class="flex flex-col">
+<span class="font-bold text-sm text-on-surface">Dr. Sarah Jenkins</span>
+<span class="text-xs text-on-surface-variant">Dermatology</span>
+</div>
+</div>
+</td>
+<td class="px-8 py-6">
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-on-surface-variant">Sept 14, 2024</span>
+<span class="text-xs text-on-surface-variant font-medium">09:00 AM</span>
+</div>
+</td>
+<td class="px-8 py-6">
+<div class="flex items-center gap-2">
+<div class="w-1.5 h-4 rounded-full bg-outline"></div>
+<span class="text-xs font-bold text-on-surface-variant">Completed</span>
+</div>
+</td>
+<td class="px-8 py-6 text-right">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors" data-icon="more_vert">more_vert</button>
+</td>
+</tr>
+<!-- Row 4 (Past) -->
+<tr class="hover:bg-surface-container-lowest transition-colors group opacity-75 hover:opacity-100">
+<td class="px-8 py-6">
+<div class="flex items-center gap-4">
+<div class="relative w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden grayscale">
+<img alt="Portrait" class="w-full h-full object-cover" data-alt="Clinical portrait of a friendly pediatrician in a bright well-lit modern medical facility" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBflKUn2zUIr3x62JudjqIksvGRxsKHkIWGJX5xK4E_BMNEeFMJ4t0spDscFQ0vAu3m1wm-HiVMRUxh12GIStmJDvXxCIOUFACp86qYdn_swuBn93Mgl2Npnm68XNgPvPFidqRukFSVQwU1GKm2TGoyq9bmR8UXU4PcJ92S9d63ZhbQOAL8kC9zc9JJsZE6rtW4vF4fd0oQjfQpEX_juVZE4xvI_Ff71-OTsa8yd87SzkMc6cdIDmJOn0ILclsjExah-0fRUR8NU40"/>
+</div>
+<div class="flex flex-col">
+<span class="font-bold text-sm text-on-surface">Dr. Michael Chen</span>
+<span class="text-xs text-on-surface-variant">Pediatrics</span>
+</div>
+</div>
+</td>
+<td class="px-8 py-6">
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-on-surface-variant">Aug 02, 2024</span>
+<span class="text-xs text-on-surface-variant font-medium">11:15 AM</span>
+</div>
+</td>
+<td class="px-8 py-6">
+<div class="flex items-center gap-2">
+<div class="w-1.5 h-4 rounded-full bg-outline"></div>
+<span class="text-xs font-bold text-on-surface-variant">Completed</span>
+</div>
+</td>
+<td class="px-8 py-6 text-right">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors" data-icon="more_vert">more_vert</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-8 bg-surface-container-high/20 flex justify-between items-center">
+<span class="text-xs font-bold text-on-surface-variant">Showing 4 of 14 entries</span>
+<div class="flex gap-2">
+<button class="p-2 rounded-lg bg-surface-container-highest text-on-surface hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="p-2 rounded-lg bg-surface-container-highest text-on-surface hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-[#f1f4f6] w-full py-16 rounded-none">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 gap-8 max-w-[1440px] mx-auto">
+<div class="font-['Public_Sans'] font-black text-slate-400">CLINIC SCHOLAR</div>
+<div class="flex flex-wrap justify-center gap-8 font-['Inter'] text-xs uppercase tracking-widest">
+<a class="text-slate-500 hover:text-blue-600 underline-offset-4 hover:underline transition-all duration-200" href="#">Contact Support</a>
+<a class="text-slate-500 hover:text-blue-600 underline-offset-4 hover:underline transition-all duration-200" href="#">Campus Map</a>
+<a class="text-slate-500 hover:text-blue-600 underline-offset-4 hover:underline transition-all duration-200" href="#">Medical Disclosure</a>
+<a class="text-slate-500 hover:text-blue-600 underline-offset-4 hover:underline transition-all duration-200" href="#">Privacy</a>
+</div>
+<div class="font-['Inter'] text-xs uppercase tracking-widest text-slate-500">
+                © 2024 University Clinical Standard. The Disciplined Curator System.
+            </div>
+</div>
+</footer>
+</body></html>

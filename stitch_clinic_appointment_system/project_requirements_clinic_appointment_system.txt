@@ -1,0 +1,7 @@
+Clinic Appointment System Project Requirements:
+1. Home page: Introduction to the clinic system.
+2. Users register/login page: Authentication for patients.
+3. Doctors listing page: Display available doctors and their specialties.
+4. Appointment booking page: Form to book a specific slot.
+5. Appointment history page: List of past and upcoming appointments for the user.
+Style: Student project, clean, functional, professional blue theme.

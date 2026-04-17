@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Clinic Scholar | Access Gateway</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700;800;900&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-container": "#e2e2e9",
+                    "tertiary-fixed-dim": "#c7c3e3",
+                    "on-secondary-container": "#505157",
+                    "primary-fixed": "#d7e2ff",
+                    "on-tertiary": "#fcf7ff",
+                    "on-surface": "#2b3437",
+                    "surface-container-highest": "#dbe4e7",
+                    "background": "#f8f9fa",
+                    "on-primary-container": "#004fa6",
+                    "on-tertiary-fixed": "#35334d",
+                    "on-primary-fixed-variant": "#0959b6",
+                    "tertiary-fixed": "#d5d1f2",
+                    "on-background": "#2b3437",
+                    "error": "#9f403d",
+                    "outline": "#737c7f",
+                    "surface-container-high": "#e3e9ec",
+                    "surface-tint": "#115cb9",
+                    "on-secondary": "#f9f8ff",
+                    "on-secondary-fixed": "#3d3f45",
+                    "on-tertiary-fixed-variant": "#52506b",
+                    "primary-fixed-dim": "#c2d5ff",
+                    "surface-container-low": "#f1f4f6",
+                    "primary-container": "#d7e2ff",
+                    "primary": "#115cb9",
+                    "surface-dim": "#d1dce0",
+                    "surface-container": "#eaeff1",
+                    "on-error": "#fff7f6",
+                    "inverse-primary": "#659dfe",
+                    "surface": "#f8f9fa",
+                    "secondary-fixed-dim": "#d4d4db",
+                    "inverse-surface": "#0c0f10",
+                    "surface-bright": "#f8f9fa",
+                    "on-surface-variant": "#586064",
+                    "secondary-dim": "#515359",
+                    "on-primary": "#f7f7ff",
+                    "surface-variant": "#dbe4e7",
+                    "tertiary-container": "#d5d1f2",
+                    "outline-variant": "#abb3b7",
+                    "tertiary-dim": "#52506b",
+                    "inverse-on-surface": "#9b9d9e",
+                    "tertiary": "#5e5c78",
+                    "secondary": "#5d5f65",
+                    "error-dim": "#4e0309",
+                    "on-primary-fixed": "#003d83",
+                    "error-container": "#fe8983",
+                    "primary-dim": "#0050a7",
+                    "on-secondary-fixed-variant": "#5a5b61",
+                    "on-tertiary-container": "#484661",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed": "#e2e2e9",
+                    "on-error-container": "#752121"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Public Sans"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .auth-split-gradient {
+            background: linear-gradient(135deg, #115cb9 0%, #0050a7 100%);
+        }
+        .ghost-border {
+            outline: 1px solid rgba(171, 179, 183, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- TopNavBar (Suppressed Navigation links for Transactional Page) -->
+<nav class="fixed top-0 w-full z-50 bg-[#f8f9fa]/80 backdrop-blur-lg shadow-sm">
+<div class="flex justify-between items-center h-20 px-12 max-w-[1440px] mx-auto">
+<div class="text-xl font-bold tracking-tighter text-blue-800">Clinic Scholar</div>
+<div class="flex items-center gap-6">
+<a class="font-['Public_Sans'] text-sm tracking-tight text-slate-600 hover:text-blue-500 transition-colors" href="#">Help Center</a>
+<a class="font-['Public_Sans'] text-sm tracking-tight text-slate-600 hover:text-blue-500 transition-colors" href="#">Institutional Access</a>
+</div>
+</div>
+<div class="bg-[#f1f4f6] h-[1px] w-full absolute bottom-0 opacity-10"></div>
+</nav>
+<main class="min-h-screen flex items-stretch pt-20">
+<!-- Left Side: Registration (Creative Bento/layered approach) -->
+<section class="hidden lg:flex w-1/2 bg-surface-container-low relative overflow-hidden items-center justify-center p-12">
+<div class="absolute inset-0 opacity-40">
+<img class="w-full h-full object-cover" data-alt="abstract architectural view of a modern clinical research facility with clean lines and soft natural daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRyVhjuf2drvR6wg_hGCDc1fsB9RjZ8L3LgkGKYvyA02PC2Y_MPrakCfLnKvbPiJ2h9SOA9TZgBD9uLut0isV0-oT1vydZiEQqHd9otcQXDLTWfD1gfxCjtVHEhPFow-iS93o0AlWbWWUr9EwKvS-ih4qvfDgcTjOO2ncSwOuzMZSuij3oQdYLKodZOAJprshOqpNhH4QwjeNLdJxDDVVGoLTc0tve7oELlxaY5jteLKmBppoxJ8m6qLrTcRFejNhOPH0Rst1wZc0"/>
+</div>
+<div class="relative z-10 w-full max-w-lg">
+<div class="mb-12">
+<h1 class="font-headline text-4xl font-extrabold tracking-tighter text-on-surface mb-4">Join the Scholar Network</h1>
+<p class="text-on-surface-variant font-medium leading-relaxed">Access the University Clinical Standard for streamlined healthcare management and peer-reviewed clinical scheduling.</p>
+</div>
+<div class="bg-surface-container-lowest p-10 rounded-xl shadow-sm ghost-border">
+<h2 class="font-headline text-xl font-bold mb-8 text-primary">Register</h2>
+<form class="space-y-6">
+<div class="space-y-2">
+<label class="text-xs font-semibold uppercase tracking-widest text-on-surface-variant ml-1">Full Name</label>
+<input class="w-full bg-surface-container-highest border-0 border-b-2 border-outline/30 focus:border-primary focus:ring-0 focus:bg-surface-container-lowest transition-all px-4 py-3 rounded-t-lg" placeholder="Dr. Julian Vane" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-semibold uppercase tracking-widest text-on-surface-variant ml-1">Academic Email</label>
+<input class="w-full bg-surface-container-highest border-0 border-b-2 border-outline/30 focus:border-primary focus:ring-0 focus:bg-surface-container-lowest transition-all px-4 py-3 rounded-t-lg" placeholder="j.vane@university.edu" type="email"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-semibold uppercase tracking-widest text-on-surface-variant ml-1">Secure Password</label>
+<input class="w-full bg-surface-container-highest border-0 border-b-2 border-outline/30 focus:border-primary focus:ring-0 focus:bg-surface-container-lowest transition-all px-4 py-3 rounded-t-lg" placeholder="••••••••••••" type="password"/>
+</div>
+<div class="pt-4">
+<button class="w-full bg-primary text-on-primary py-4 rounded-xl font-bold text-sm tracking-tight scale-95 active:opacity-80 transition-transform shadow-lg shadow-primary/20">
+                                Create Scholar Account
+                            </button>
+</div>
+</form>
+</div>
+</div>
+</section>
+<!-- Right Side: Login (Signature Gradient approach) -->
+<section class="w-full lg:w-1/2 auth-split-gradient flex items-center justify-center p-12">
+<div class="w-full max-w-md bg-surface-container-lowest/10 backdrop-blur-xl p-1 shadow-2xl rounded-2xl">
+<div class="bg-surface-container-lowest p-10 lg:p-12 rounded-2xl">
+<div class="flex justify-center mb-10">
+<div class="w-16 h-16 rounded-full bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="lock_open">lock_open</span>
+</div>
+</div>
+<header class="text-center mb-10">
+<h2 class="font-headline text-3xl font-black tracking-tighter text-on-surface">Login</h2>
+<p class="text-on-surface-variant text-sm mt-2">Welcome back to the Disciplined Curator system.</p>
+</header>
+<form class="space-y-6">
+<div class="space-y-2">
+<label class="text-xs font-semibold uppercase tracking-widest text-on-surface-variant ml-1">Username or Email</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-lg" data-icon="person">person</span>
+<input class="w-full bg-surface-container border-0 border-b-2 border-outline/20 focus:border-primary focus:ring-0 focus:bg-surface-container-lowest transition-all pl-12 pr-4 py-4 rounded-t-lg text-sm" type="text"/>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-center">
+<label class="text-xs font-semibold uppercase tracking-widest text-on-surface-variant ml-1">Password</label>
+<a class="text-[10px] uppercase font-bold text-primary tracking-widest hover:underline" href="#">Forgot?</a>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-lg" data-icon="key">key</span>
+<input class="w-full bg-surface-container border-0 border-b-2 border-outline/20 focus:border-primary focus:ring-0 focus:bg-surface-container-lowest transition-all pl-12 pr-4 py-4 rounded-t-lg text-sm" type="password"/>
+</div>
+</div>
+<div class="flex items-center gap-3 py-2">
+<input class="w-4 h-4 rounded-sm border-outline/30 text-primary focus:ring-primary/20" id="remember" type="checkbox"/>
+<label class="text-xs font-medium text-on-surface-variant" for="remember">Keep me authenticated for 30 days</label>
+</div>
+<button class="w-full bg-primary text-on-primary py-4 rounded-xl font-bold text-sm tracking-tight scale-95 active:opacity-80 transition-transform">
+                            Sign In to Dashboard
+                        </button>
+<!-- Mobile Fallback for Registration -->
+<div class="lg:hidden text-center mt-8 pt-8 border-t border-surface-container">
+<p class="text-xs text-on-surface-variant mb-4">Don't have an account yet?</p>
+<button class="w-full bg-secondary-container text-on-secondary-container py-3 rounded-xl font-bold text-xs tracking-widest uppercase">
+                                Register Now
+                            </button>
+</div>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#f1f4f6] w-full py-16 rounded-none">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 gap-8 max-w-[1440px] mx-auto">
+<div class="font-['Public_Sans'] font-black text-slate-400">© 2024 University Clinical Standard. The Disciplined Curator System.</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-['Inter'] text-xs uppercase tracking-widest text-slate-500 hover:text-blue-600 transition-all underline-offset-4 hover:underline" href="#">Contact Support</a>
+<a class="font-['Inter'] text-xs uppercase tracking-widest text-slate-500 hover:text-blue-600 transition-all underline-offset-4 hover:underline" href="#">Campus Map</a>
+<a class="font-['Inter'] text-xs uppercase tracking-widest text-slate-500 hover:text-blue-600 transition-all underline-offset-4 hover:underline" href="#">Medical Disclosure</a>
+<a class="font-['Inter'] text-xs uppercase tracking-widest text-slate-500 hover:text-blue-600 transition-all underline-offset-4 hover:underline" href="#">Privacy</a>
+</div>
+</div>
+</footer>
+</body></html>

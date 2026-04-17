@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Book an appointment with a specialist at Clinic Scholar."/>
+  <title>Clinic Scholar | Book Appointment</title>
+
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1"/>
+</head>
+<body>
+
+<!-- ══════════════════════════════════
+     NAVIGATION
+══════════════════════════════════ -->
+<header class="navbar">
+  <div class="navbar-inner">
+    <a href="index.html" class="navbar-brand">Clinic Scholar</a>
+    <nav>
+      <ul class="navbar-nav">
+        <li><a href="index.html"   class="nav-link">Home</a></li>
+        <li><a href="doctors.html" class="nav-link">Doctors</a></li>
+        <li><a href="book.html"    class="nav-link active">Book</a></li>
+        <li><a href="history.php"  class="nav-link">History</a></li>
+      </ul>
+    </nav>
+    <div class="navbar-actions">
+      <a href="auth.html#login" class="btn btn-ghost btn-sm">Login</a>
+      <a href="auth.html#register" class="btn btn-primary btn-sm">Register</a>
+    </div>
+  </div>
+</header>
+
+<main style="padding-top:80px;">
+  <div class="container" style="padding-top:5rem; padding-bottom:5rem; max-width:1100px;">
+
+    <!-- Stepper Header -->
+    <div style="margin-bottom:3rem;">
+      <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:1.5rem;">
+        <div>
+          <span class="uppercase-label" style="color:var(--on-surface-variant); display:block; margin-bottom:0.5rem;">Book Your Appointment</span>
+          <h1 style="font-size:clamp(1.75rem, 3.5vw, 2.5rem); font-weight:900; letter-spacing:-0.03em;">Appointment Details</h1>
+        </div>
+      </div>
+
+      <!-- Progress Bar -->
+      <div class="progress-track" style="margin-bottom:1rem;">
+        <div class="progress-fill" style="width:50%;"></div>
+      </div>
+
+      <!-- Step Labels -->
+      <div class="stepper">
+        <div class="step done">
+          <span class="material-symbols-outlined" style="font-size:1rem; color:var(--primary);">check_circle</span>
+          Select Doctor
+        </div>
+        <div class="step active">
+          <span class="step-num">2</span>
+          Date &amp; Time
+        </div>
+        <div class="step inactive">
+          <span class="step-num">3</span>
+          Confirm
+        </div>
+      </div>
+    </div>
+
+    <!-- Server-side error display (via URL param) -->
+    <div id="book-error-box" class="form-error-box" style="display:none; margin-bottom:2rem;">
+      <p>Please correct these errors:</p>
+      <ul id="book-error-list"></ul>
+    </div>
+
+    <!-- Main Grid -->
+    <div style="display:grid; grid-template-columns:1fr; gap:2.5rem;">
+
+      <!-- Sidebar -->
+      <aside style="display:flex; flex-direction:column; gap:1.5rem;">
+
+        <!-- Help Box -->
+        <div style="background:var(--surface-container-lowest); padding:1.5rem; border-radius:var(--radius-xl); box-shadow:var(--shadow-card);">
+          <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:0.75rem;">
+            <span class="material-symbols-outlined" style="color:var(--primary);">info</span>
+            <h4 style="font-size:0.875rem; font-weight:700;">Need Help?</h4>
+          </div>
+          <p style="font-size:0.8rem; color:var(--on-surface-variant); line-height:1.6;">For emergencies please call <strong>911</strong> immediately or visit the nearest emergency room.</p>
+        </div>
+
+        <!-- Tips Box -->
+        <div style="background:var(--primary-container); padding:1.5rem; border-radius:var(--radius-xl);">
+          <h4 style="font-size:0.875rem; font-weight:700; color:var(--on-primary-container); margin-bottom:0.75rem;">Booking Tips</h4>
+          <ul style="list-style:disc; list-style-position:inside; font-size:0.8rem; color:var(--on-primary-container); line-height:1.8; opacity:0.9;">
+            <li>Book at least 24 hours in advance</li>
+            <li>Bring your insurance card</li>
+            <li>Arrive 10 minutes early</li>
+            <li>Describe your symptoms in notes</li>
+          </ul>
+        </div>
+
+      </aside>
+
+      <!-- Booking Form -->
+      <div style="background:var(--surface-container-lowest); padding:2.5rem; border-radius:1.5rem; box-shadow:var(--shadow-card);">
+        <h2 style="font-family:var(--font-headline); font-size:1.25rem; font-weight:800; margin-bottom:2rem;">Complete Your Booking</h2>
+
+        <form id="bookForm" action="book_appointment.php" method="POST" novalidate>
+          <input type="hidden" name="action" value="book"/>
+
+          <!-- Doctor Select -->
+          <div class="form-group" style="margin-bottom:1.75rem;">
+            <label class="form-label" for="doctor-select">Select Doctor</label>
+            <select id="doctor-select" name="doctor_name" class="form-input" style="margin-top:0.5rem;">
+              <option value="">— Choose a doctor —</option>
+              <option value="Dr. Abdullah Al-Mutairi" data-specialty="Cardiovascular Science">Dr. Abdullah Al-Mutairi — Cardiovascular Science</option>
+              <option value="Dr. Sarah Al-Otaibi"     data-specialty="Neurological Disorders">Dr. Sarah Al-Otaibi — Neurological Disorders</option>
+              <option value="Dr. Ahmad Al-Harbi"      data-specialty="Pediatric Surgery">Dr. Ahmad Al-Harbi — Pediatric Surgery</option>
+              <option value="Dr. Khalid Al-Anazi"     data-specialty="Endocrinology">Dr. Khalid Al-Anazi — Endocrinology</option>
+              <option value="Dr. Noura Al-Qahtani"    data-specialty="Sports Medicine">Dr. Noura Al-Qahtani — Sports Medicine</option>
+              <option value="Dr. Fawzia Al-Zahrani"   data-specialty="Dermatology">Dr. Fawzia Al-Zahrani — Dermatology</option>
+            </select>
+          </div>
+
+          <!-- Specialty (auto-filled by JS) -->
+          <div class="form-group" style="margin-bottom:1.75rem;">
+            <label class="form-label">Specialty <span style="text-transform:none; font-weight:400; color:var(--outline);">(auto-filled)</span></label>
+            <input id="specialty-display" class="form-input" name="specialty" type="text"
+                   readonly style="margin-top:0.5rem; cursor:not-allowed; opacity:0.7;" placeholder="Select a doctor above"/>
+          </div>
+
+          <!-- Date & Time Row -->
+          <div class="grid-2col" style="margin-bottom:1.75rem;">
+            <div class="form-group">
+              <label class="form-label" for="appt-date">Appointment Date</label>
+              <input id="appt-date" class="form-input" name="appointment_date" type="date"
+                     style="margin-top:0.5rem;"/>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="appt-time">Appointment Time</label>
+              <select id="appt-time" class="form-input" name="appointment_time" style="margin-top:0.5rem;">
+                <option value="">— Select time —</option>
+                <option value="09:00:00">09:00 AM</option>
+                <option value="09:30:00">09:30 AM</option>
+                <option value="10:00:00">10:00 AM</option>
+                <option value="10:30:00">10:30 AM</option>
+                <option value="11:00:00">11:00 AM</option>
+                <option value="11:30:00">11:30 AM</option>
+                <option value="14:00:00">02:00 PM</option>
+                <option value="14:30:00">02:30 PM</option>
+                <option value="15:00:00">03:00 PM</option>
+                <option value="15:30:00">03:30 PM</option>
+                <option value="16:00:00">04:00 PM</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Notes -->
+          <div class="form-group" style="margin-bottom:2.5rem;">
+            <label class="form-label" for="appt-notes">
+              Additional Notes
+              <span style="text-transform:none; font-weight:400; color:var(--outline); margin-left:4px;">(optional)</span>
+            </label>
+            <textarea id="appt-notes" class="form-input" name="notes" rows="4"
+                      style="margin-top:0.5rem;"
+                      placeholder="Describe your symptoms or reason for visit..."></textarea>
+          </div>
+
+          <!-- Actions -->
+          <div style="display:flex; justify-content:space-between; align-items:center; padding-top:1.5rem; border-top:1px solid var(--surface-container);">
+            <a href="doctors.html" class="btn btn-ghost" style="display:inline-flex; align-items:center; gap:0.5rem;">
+              <span class="material-symbols-outlined">arrow_back</span> Back to Doctors
+            </a>
+            <button type="submit" class="btn btn-primary btn-lg" id="bookSubmitBtn">
+              <span class="material-symbols-outlined">event_available</span>
+              Confirm Booking
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </div><!-- /grid -->
+
+  </div>
+</main>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-brand">CLINIC SCHOLAR</div>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="doctors.html">Doctors</a></li>
+      <li><a href="history.php">History</a></li>
+      <li><a href="#">Privacy</a></li>
+    </ul>
+    <div class="footer-copy">&copy; 2026 University Clinical Standard.</div>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════
+     BOOKING CONFIRMATION MODAL
+══════════════════════════════════ -->
+<div class="modal-overlay" id="confirmModal" style="align-items:center; justify-content:center;">
+  <div style="background:#fff; border-radius:1.5rem; box-shadow:0 32px 64px rgba(0,0,0,0.2); width:100%; max-width:520px; overflow:hidden; animation:fadeUp 0.25s ease-out both;">
+
+    <!-- Modal Header -->
+    <div style="background:linear-gradient(135deg,#115cb9 0%,#0050a7 100%); padding:2rem 2.5rem; position:relative; overflow:hidden;">
+      <!-- Decorative circle -->
+      <div style="position:absolute; right:-2rem; top:-2rem; width:10rem; height:10rem; background:rgba(255,255,255,0.08); border-radius:50%;"></div>
+      <div style="position:relative; z-index:1;">
+        <div style="width:3.5rem; height:3.5rem; background:rgba(255,255,255,0.15); border-radius:50%; display:flex; align-items:center; justify-content:center; margin-bottom:1rem;">
+          <span class="material-symbols-outlined" style="color:#fff; font-size:1.75rem;">event_available</span>
+        </div>
+        <h2 style="font-family:'Public Sans',sans-serif; font-size:1.5rem; font-weight:900; color:#fff; margin-bottom:0.25rem;">Confirm Your Appointment</h2>
+        <p style="color:rgba(255,255,255,0.7); font-size:0.875rem;">Please review your booking details before confirming.</p>
+      </div>
+    </div>
+
+    <!-- Appointment Summary -->
+    <div style="padding:2rem 2.5rem 0;">
+      <p style="font-size:0.65rem; font-weight:800; text-transform:uppercase; letter-spacing:0.15em; color:#586064; margin-bottom:1.25rem;">Appointment Summary</p>
+
+      <div style="display:flex; flex-direction:column; gap:0; border:1px solid #e3e9ec; border-radius:0.75rem; overflow:hidden;">
+
+        <!-- Doctor row -->
+        <div style="display:flex; align-items:center; gap:1rem; padding:1rem 1.25rem; background:#f8f9fa; border-bottom:1px solid #e3e9ec;">
+          <div style="width:2.25rem; height:2.25rem; background:#d7e2ff; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <span class="material-symbols-outlined" style="color:#115cb9; font-size:1.1rem;">person</span>
+          </div>
+          <div>
+            <p style="font-size:0.65rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:#586064; margin-bottom:0.1rem;">Doctor</p>
+            <p style="font-weight:700; font-size:0.9375rem; color:#2b3437;" id="conf-doctor">—</p>
+          </div>
+        </div>
+
+        <!-- Specialty row -->
+        <div style="display:flex; align-items:center; gap:1rem; padding:1rem 1.25rem; background:#fff; border-bottom:1px solid #e3e9ec;">
+          <div style="width:2.25rem; height:2.25rem; background:#d5d1f2; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <span class="material-symbols-outlined" style="color:#5e5c78; font-size:1.1rem;">medical_services</span>
+          </div>
+          <div>
+            <p style="font-size:0.65rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:#586064; margin-bottom:0.1rem;">Specialty</p>
+            <p style="font-weight:600; font-size:0.9375rem; color:#2b3437;" id="conf-specialty">—</p>
+          </div>
+        </div>
+
+        <!-- Date row -->
+        <div style="display:flex; align-items:center; gap:1rem; padding:1rem 1.25rem; background:#f8f9fa; border-bottom:1px solid #e3e9ec;">
+          <div style="width:2.25rem; height:2.25rem; background:#d7e2ff; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <span class="material-symbols-outlined" style="color:#115cb9; font-size:1.1rem;">calendar_month</span>
+          </div>
+          <div>
+            <p style="font-size:0.65rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:#586064; margin-bottom:0.1rem;">Date</p>
+            <p style="font-weight:600; font-size:0.9375rem; color:#2b3437;" id="conf-date">—</p>
+          </div>
+        </div>
+
+        <!-- Time row -->
+        <div style="display:flex; align-items:center; gap:1rem; padding:1rem 1.25rem; background:#fff; border-bottom:1px solid #e3e9ec;">
+          <div style="width:2.25rem; height:2.25rem; background:#d7e2ff; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <span class="material-symbols-outlined" style="color:#115cb9; font-size:1.1rem;">schedule</span>
+          </div>
+          <div>
+            <p style="font-size:0.65rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:#586064; margin-bottom:0.1rem;">Time</p>
+            <p style="font-weight:600; font-size:0.9375rem; color:#2b3437;" id="conf-time">—</p>
+          </div>
+        </div>
+
+        <!-- Notes row -->
+        <div style="display:flex; align-items:flex-start; gap:1rem; padding:1rem 1.25rem; background:#f8f9fa;" id="conf-notes-row">
+          <div style="width:2.25rem; height:2.25rem; background:#e2e2e9; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px;">
+            <span class="material-symbols-outlined" style="color:#505157; font-size:1.1rem;">notes</span>
+          </div>
+          <div>
+            <p style="font-size:0.65rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:#586064; margin-bottom:0.1rem;">Notes</p>
+            <p style="font-size:0.875rem; color:#586064; font-style:italic; line-height:1.5;" id="conf-notes">No additional notes.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Info notice -->
+      <div style="background:#f0f7ff; border-radius:0.75rem; padding:0.875rem 1rem; margin-top:1.25rem; display:flex; align-items:center; gap:0.75rem;">
+        <span class="material-symbols-outlined" style="color:#115cb9; font-size:1.1rem; flex-shrink:0;">info</span>
+        <p style="font-size:0.75rem; color:#115cb9; line-height:1.5;">Once confirmed, you can reschedule or cancel from your <strong>History</strong> page at any time.</p>
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div style="display:flex; gap:1rem; padding:1.5rem 2.5rem 2rem;">
+      <button type="button" onclick="document.getElementById('confirmModal').classList.remove('active')"
+        style="flex:1; padding:0.875rem; border-radius:0.75rem; border:1.5px solid #abb3b7; background:#fff; font-weight:700; font-size:0.875rem; cursor:pointer; color:#586064; transition:background 0.15s;"
+        onmouseover="this.style.background='#f1f4f6'" onmouseout="this.style.background='#fff'">
+        ← Edit Details
+      </button>
+      <button type="button" id="finalConfirmBtn"
+        style="flex:2; padding:0.875rem; border-radius:0.75rem; border:none; background:linear-gradient(135deg,#115cb9,#0050a7); color:#fff; font-weight:800; font-size:0.875rem; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:0.5rem; box-shadow:0 4px 16px rgba(17,92,185,0.35); transition:opacity 0.15s;"
+        onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+        <span class="material-symbols-outlined" style="font-size:1.1rem;">check_circle</span>
+        Confirm My Booking
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<!-- Page-specific JavaScript -->
+<script src="book.js"></script>
+
+</body>
+</html>

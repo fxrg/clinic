@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Browse our distinguished medical faculty. Find board-certified specialists at Clinic Scholar."/>
+  <title>Clinic Scholar | Doctors</title>
+
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1"/>
+</head>
+<body>
+
+<!-- ══════════════════════════════════
+     NAVIGATION
+══════════════════════════════════ -->
+<header class="navbar">
+  <div class="navbar-inner">
+    <a href="index.html" class="navbar-brand">Clinic Scholar</a>
+    <nav>
+      <ul class="navbar-nav">
+        <li><a href="index.html"   class="nav-link">Home</a></li>
+        <li><a href="doctors.html" class="nav-link active">Doctors</a></li>
+        <li><a href="book.html"    class="nav-link">Book</a></li>
+        <li><a href="history.php"  class="nav-link">History</a></li>
+      </ul>
+    </nav>
+    <div class="navbar-actions">
+      <a href="auth.html#login"    class="btn btn-secondary btn-sm">Login</a>
+      <a href="auth.html#register" class="btn btn-primary btn-sm">Register</a>
+    </div>
+  </div>
+</header>
+
+<main style="padding-top:80px;">
+  <div class="container" style="padding-top:5rem; padding-bottom:6rem;">
+
+    <!-- Page Header -->
+    <div style="margin-bottom:4rem;">
+      <h1 style="font-size:clamp(2rem, 4vw, 3rem); font-weight:900; letter-spacing:-0.03em; margin-bottom:1rem;">
+        Distinguished Medical Faculty
+      </h1>
+      <p style="color:var(--on-surface-variant); max-width:600px; font-size:1.125rem;">
+        Connect with world-class specialists and academic practitioners dedicated to evidence-based clinical excellence.
+      </p>
+    </div>
+
+    <!-- Search & Filter Bar -->
+    <div style="display:flex; flex-wrap:wrap; gap:1.5rem; margin-bottom:3rem; align-items:flex-end;">
+
+      <!-- Search Input -->
+      <div style="flex:1; min-width:240px;">
+        <label class="form-label" for="doctorSearch">Search Faculty</label>
+        <div class="input-icon-wrapper" style="margin-top:0.5rem;">
+          <span class="material-symbols-outlined input-icon">search</span>
+          <input id="doctorSearch" class="form-input with-icon"
+                 type="text" placeholder="Search by name or specialty..."
+                 autocomplete="off"/>
+        </div>
+      </div>
+
+      <!-- Filter Chips -->
+      <div id="filterChips" style="display:flex; flex-wrap:wrap; gap:0.5rem; align-items:center;">
+        <button class="chip chip-active" data-filter="all">All Faculty</button>
+        <button class="chip chip-default" data-filter="cardiology">Cardiology</button>
+        <button class="chip chip-default" data-filter="neurology">Neurology</button>
+        <button class="chip chip-default" data-filter="pediatrics">Pediatrics</button>
+        <button class="chip chip-default" data-filter="internal">Internal Medicine</button>
+        <button class="chip chip-default" data-filter="dermatology">Dermatology</button>
+      </div>
+    </div>
+
+    <!-- No Results Message -->
+    <div id="noResults" style="display:none; text-align:center; padding:5rem 0;">
+      <span class="material-symbols-outlined" style="font-size:4rem; color:var(--outline-variant); display:block; margin-bottom:1rem;">search_off</span>
+      <p style="color:var(--on-surface-variant); font-size:1rem;">No doctors found. Try a different search term.</p>
+    </div>
+
+    <!-- ── Doctors Grid ── -->
+    <div class="grid-3col" id="doctorsGrid">
+
+      <!-- Doctor Card 1 -->
+      <article class="doctor-card" data-filter="cardiology" data-name="dr. abdullah al-mutairi" data-specialty="cardiovascular science">
+        <div class="card-img">
+          <div style="position:absolute; top:1rem; left:1rem; z-index:1;">
+            <span style="background:var(--primary-container); color:var(--on-primary-container); padding:0.25rem 0.75rem; border-radius:999px; font-size:0.65rem; font-weight:800; text-transform:uppercase; letter-spacing:0.12em;">Board Certified</span>
+          </div>
+          <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=500&q=80"
+               alt="Portrait of Dr. Abdullah Al-Mutairi, Cardiologist"/>
+        </div>
+        <div class="card-body">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:1rem;">
+            <div>
+              <p style="color:var(--primary); font-weight:800; font-size:0.7rem; text-transform:uppercase; letter-spacing:0.12em; margin-bottom:0.25rem;">Cardiovascular Science</p>
+              <h3 style="font-size:1.375rem; font-weight:800;">Dr. Abdullah Al-Mutairi</h3>
+            </div>
+            <div style="width:4px; height:3rem; background:var(--primary); border-radius:999px; flex-shrink:0;"></div>
+          </div>
+          <p style="color:var(--on-surface-variant); font-size:0.875rem; line-height:1.7; margin-bottom:2rem;">Specializing in advanced heart failure and non-invasive diagnostic techniques with over 15 years of academic research.</p>
+          <div style="margin-top:auto;">
+            <a href="book.html?doctor=Dr.+Abdullah+Al-Mutairi&specialty=Cardiovascular+Science"
+               class="btn btn-primary btn-full" style="justify-content:center; background:linear-gradient(135deg,#115cb9,#0050a7);">
+              Book Appointment
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Doctor Card 2 -->
+      <article class="doctor-card" data-filter="neurology" data-name="dr. sarah al-otaibi" data-specialty="neurological disorders">
+        <div class="card-img">
+          <div style="position:absolute; top:1rem; left:1rem; z-index:1;">
+            <span style="background:var(--tertiary-container); color:var(--on-tertiary-container); padding:0.25rem 0.75rem; border-radius:999px; font-size:0.65rem; font-weight:800; text-transform:uppercase; letter-spacing:0.12em;">Research Lead</span>
+          </div>
+          <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=500&q=80"
+               alt="Portrait of Dr. Sarah Al-Otaibi, Neurologist"/>
+        </div>
+        <div class="card-body">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:1rem;">
+            <div>
+              <p style="color:var(--primary); font-weight:800; font-size:0.7rem; text-transform:uppercase; letter-spacing:0.12em; margin-bottom:0.25rem;">Neurological Disorders</p>
+              <h3 style="font-size:1.375rem; font-weight:800;">Dr. Sarah Al-Otaibi</h3>
+            </div>
+            <div style="width:4px; height:3rem; background:var(--tertiary); border-radius:999px; flex-shrink:0;"></div>
+          </div>
+          <p style="color:var(--on-surface-variant); font-size:0.875rem; line-height:1.7; margin-bottom:2rem;">Pioneer in neuro-regenerative therapy and clinical trials for chronic neurological conditions at University Center.</p>
+          <div style="margin-top:auto;">
+            <a href="book.html?doctor=Dr.+Sarah+Al-Otaibi&specialty=Neurological+Disorders"
+               class="btn btn-primary btn-full" style="justify-content:center; background:linear-gradient(135deg,#115cb9,#0050a7);">
+              Book Appointment
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Doctor Card 3 -->
+      <article class="doctor-card" data-filter="pediatrics" data-name="dr. ahmad al-harbi" data-specialty="pediatric surgery">
+        <div class="card-img">
+          <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=500&q=80"
+               alt="Portrait of Dr. Ahmad Al-Harbi, Pediatric Surgeon"/>
+        </div>
+        <div class="card-body">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:1rem;">
+            <div>
+              <p style="color:var(--primary); font-weight:800; font-size:0.7rem; text-transform:uppercase; letter-spacing:0.12em; margin-bottom:0.25rem;">Pediatric Surgery</p>
+              <h3 style="font-size:1.375rem; font-weight:800;">Dr. Ahmad Al-Harbi</h3>
+            </div>
+            <div style="width:4px; height:3rem; background:var(--primary); border-radius:999px; flex-shrink:0;"></div>
+          </div>
+          <p style="color:var(--on-surface-variant); font-size:0.875rem; line-height:1.7; margin-bottom:2rem;">Expert in minimally invasive pediatric procedures with a focus on neonatology and congenital reconstructive surgery.</p>
+          <div style="margin-top:auto;">
+            <a href="book.html?doctor=Dr.+Ahmad+Al-Harbi&specialty=Pediatric+Surgery"
+               class="btn btn-primary btn-full" style="justify-content:center; background:linear-gradient(135deg,#115cb9,#0050a7);">
+              Book Appointment
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Doctor Card 4 -->
+      <article class="doctor-card" data-filter="internal" data-name="dr. khalid al-anazi" data-specialty="endocrinology">
+        <div class="card-img">
+          <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=500&q=80"
+               alt="Portrait of Dr. Khalid Al-Anazi, Endocrinologist"/>
+        </div>
+        <div class="card-body">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:1rem;">
+            <div>
+              <p style="color:var(--primary); font-weight:800; font-size:0.7rem; text-transform:uppercase; letter-spacing:0.12em; margin-bottom:0.25rem;">Endocrinology</p>
+              <h3 style="font-size:1.375rem; font-weight:800;">Dr. Khalid Al-Anazi</h3>
+            </div>
+            <div style="width:4px; height:3rem; background:var(--primary); border-radius:999px; flex-shrink:0;"></div>
+          </div>
+          <p style="color:var(--on-surface-variant); font-size:0.875rem; line-height:1.7; margin-bottom:2rem;">Focused on metabolic health and hormone replacement therapies with published work in leading medical journals.</p>
+          <div style="margin-top:auto;">
+            <a href="book.html?doctor=Dr.+Khalid+Al-Anazi&specialty=Endocrinology"
+               class="btn btn-primary btn-full" style="justify-content:center; background:linear-gradient(135deg,#115cb9,#0050a7);">
+              Book Appointment
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Doctor Card 5 -->
+      <article class="doctor-card" data-filter="internal" data-name="dr. noura al-qahtani" data-specialty="sports medicine">
+        <div class="card-img">
+          <div style="position:absolute; top:1rem; left:1rem; z-index:1;">
+            <span style="background:var(--secondary-container); color:var(--on-secondary-container); padding:0.25rem 0.75rem; border-radius:999px; font-size:0.65rem; font-weight:800; text-transform:uppercase; letter-spacing:0.12em;">Available Today</span>
+          </div>
+          <img src="https://images.unsplash.com/photo-1527613426441-4da17471b66d?w=500&q=80"
+               alt="Portrait of Dr. Noura Al-Qahtani, Sports Medicine"/>
+        </div>
+        <div class="card-body">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:1rem;">
+            <div>
+              <p style="color:var(--primary); font-weight:800; font-size:0.7rem; text-transform:uppercase; letter-spacing:0.12em; margin-bottom:0.25rem;">Sports Medicine</p>
+              <h3 style="font-size:1.375rem; font-weight:800;">Dr. Noura Al-Qahtani</h3>
+            </div>
+            <div style="width:4px; height:3rem; background:var(--primary); border-radius:999px; flex-shrink:0;"></div>
+          </div>
+          <p style="color:var(--on-surface-variant); font-size:0.875rem; line-height:1.7; margin-bottom:2rem;">Leading specialist in orthopedic rehabilitation and injury prevention for professional athletes and clinical patients.</p>
+          <div style="margin-top:auto;">
+            <a href="book.html?doctor=Dr.+Noura+Al-Qahtani&specialty=Sports+Medicine"
+               class="btn btn-primary btn-full" style="justify-content:center; background:linear-gradient(135deg,#115cb9,#0050a7);">
+              Book Appointment
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Doctor Card 6 -->
+      <article class="doctor-card" data-filter="dermatology" data-name="dr. fawzia al-zahrani" data-specialty="dermatology">
+        <div class="card-img">
+          <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=500&q=80"
+               alt="Portrait of Dr. Fawzia Al-Zahrani, Dermatologist"/>
+        </div>
+        <div class="card-body">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:1rem;">
+            <div>
+              <p style="color:var(--primary); font-weight:800; font-size:0.7rem; text-transform:uppercase; letter-spacing:0.12em; margin-bottom:0.25rem;">Dermatology</p>
+              <h3 style="font-size:1.375rem; font-weight:800;">Dr. Fawzia Al-Zahrani</h3>
+            </div>
+            <div style="width:4px; height:3rem; background:var(--primary); border-radius:999px; flex-shrink:0;"></div>
+          </div>
+          <p style="color:var(--on-surface-variant); font-size:0.875rem; line-height:1.7; margin-bottom:2rem;">Specializing in oncological dermatology and advanced laser treatments with a holistic approach to skin health.</p>
+          <div style="margin-top:auto;">
+            <a href="book.html?doctor=Dr.+Fawzia+Al-Zahrani&specialty=Dermatology"
+               class="btn btn-primary btn-full" style="justify-content:center; background:linear-gradient(135deg,#115cb9,#0050a7);">
+              Book Appointment
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div><!-- /doctorsGrid -->
+
+    <!-- Load More -->
+    <div style="text-align:center; margin-top:5rem;">
+      <button style="display:inline-flex; align-items:center; gap:0.75rem; padding:1rem 2rem; background:var(--surface-container-high); border:none; border-radius:999px; cursor:pointer; font-weight:700; font-size:0.875rem; color:var(--on-surface); transition:background 0.15s;"
+              onmouseover="this.style.background='var(--surface-container-highest)'"
+              onmouseout="this.style.background='var(--surface-container-high)'">
+        Explore More Faculty
+        <span class="material-symbols-outlined" style="font-size:1.25rem;">arrow_forward</span>
+      </button>
+    </div>
+
+  </div>
+</main>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-brand">CLINIC SCHOLAR</div>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="book.html">Book Appointment</a></li>
+      <li><a href="history.php">My History</a></li>
+      <li><a href="#">Privacy Policy</a></li>
+    </ul>
+    <div class="footer-copy">&copy; 2026 University Clinical Standard.<br/>The Disciplined Curator System.</div>
+  </div>
+</footer>
+
+<!-- Page-specific JavaScript -->
+<script src="doctors.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+# .htaccess — DS362 Clinic Appointment System
+# Ensures Apache allows POST requests to PHP files
+
+# Allow all standard HTTP methods
+<LimitExcept GET POST HEAD OPTIONS>
+    Deny from all
+</LimitExcept>
+
+# Enable PHP processing
+AddType application/x-httpd-php .php
+
+# Prevent directory listing
+Options -Indexes
+
+# Character encoding
+AddDefaultCharset UTF-8
