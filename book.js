@@ -56,6 +56,24 @@ function getAppointments() {
 // ── DOM Ready ─────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', function() {
 
+    // ── Auth Guard: require login to book ──────────────────────
+    const currentUser = (function() {
+        try { return JSON.parse(localStorage.getItem(KEY_USER)); }
+        catch(e) { return null; }
+    })();
+    if (!currentUser) {
+        window.location.href = 'auth.html#login';
+        return;
+    }
+
+    // ── Update navbar to show logged-in state ──────────────────
+    const navActions = document.querySelector('.navbar-actions');
+    if (navActions && currentUser) {
+        navActions.innerHTML =
+            '<span style="font-size:0.875rem; color:var(--on-surface-variant);">\uD83D\uDC4B ' + currentUser.name + '</span>' +
+            '<button onclick="(function(){ localStorage.removeItem(\'clinic_user\'); window.location.href=\'index.html\'; })()" class="btn btn-outline btn-sm">Logout</button>';
+    }
+
     const doctorSelect     = document.getElementById('doctor-select');
     const specialtyDisplay = document.getElementById('specialty-display');
     const dateInput        = document.getElementById('appt-date');

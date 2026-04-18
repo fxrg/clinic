@@ -1,302 +1,374 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Clinic Scholar — The Academic Clinical Standard. Book appointments with world-class physicians through our disciplined curator system."/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Clinic Scholar — The Academic Clinical Standard. Book appointments with world-class physicians through our disciplined curator system." />
   <title>Clinic Scholar | Home</title>
 
   <!-- Shared CSS -->
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style.css" />
 
   <!-- Material Symbols Icon Font -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1"/>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1" />
 </head>
+
 <body>
 
-<!-- ══════════════════════════════════════
+  <!-- ══════════════════════════════════════
      NAVIGATION
 ══════════════════════════════════════ -->
-<header class="navbar">
-  <div class="navbar-inner">
-    <a href="index.html" class="navbar-brand">Clinic Scholar</a>
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-brand">Clinic Scholar</a>
 
-    <nav>
-      <ul class="navbar-nav">
-        <li><a href="index.html"   class="nav-link active">Home</a></li>
-        <li><a href="doctors.html" class="nav-link">Doctors</a></li>
-        <li><a href="book.html"    class="nav-link">Book</a></li>
-        <li><a href="history.php"  class="nav-link">History</a></li>
-      </ul>
-    </nav>
+      <nav>
+        <ul class="navbar-nav">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="doctors.html" class="nav-link">Doctors</a></li>
+          <li><a href="book.html" class="nav-link">Book</a></li>
+          <li><a href="history.html" class="nav-link">History</a></li>
+        </ul>
+      </nav>
 
-    <div class="navbar-actions">
-      <a href="auth.html#login"    class="btn btn-ghost btn-sm">Login</a>
-      <a href="auth.html#register" class="btn btn-primary btn-sm">Register</a>
+      <div class="navbar-actions">
+        <a href="auth.html#login" class="btn btn-ghost btn-sm">Login</a>
+        <a href="auth.html#register" class="btn btn-primary btn-sm">Register</a>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<main style="padding-top: 80px;">
+  <main style="padding-top: 80px;">
 
-  <!-- ══════════════════════════════════
+    <!-- ══════════════════════════════════
        HERO SECTION
   ══════════════════════════════════ -->
-  <section style="min-height:820px; display:flex; align-items:center; overflow:hidden;">
-    <div class="container" style="display:grid; grid-template-columns:1fr; gap:3rem; align-items:center; padding-top:4rem; padding-bottom:4rem;">
+    <section style="min-height:820px; display:flex; align-items:center; overflow:hidden;">
+      <div class="container"
+        style="display:grid; grid-template-columns:1fr; gap:3rem; align-items:center; padding-top:4rem; padding-bottom:4rem;">
 
-      <!-- Left: Text -->
-      <div class="animate-in" style="max-width:640px;">
-        <span style="display:inline-block; padding:0.25rem 0.875rem; border-radius:999px; background:var(--primary-container); color:var(--on-primary-container); font-size:0.7rem; font-weight:800; letter-spacing:0.15em; text-transform:uppercase; margin-bottom:1.5rem;">
-          University Clinical Standard
-        </span>
+        <!-- Left: Text -->
+        <div class="animate-in" style="max-width:640px;">
+          <span
+            style="display:inline-block; padding:0.25rem 0.875rem; border-radius:999px; background:var(--primary-container); color:var(--on-primary-container); font-size:0.7rem; font-weight:800; letter-spacing:0.15em; text-transform:uppercase; margin-bottom:1.5rem;">
+            University Clinical Standard
+          </span>
 
-        <h1 style="font-size:clamp(2.5rem, 5vw, 3.75rem); font-weight:900; line-height:1.1; margin-bottom:1.5rem;">
-          Excellence in<br/>
-          <span style="color:var(--primary); font-style:italic;">Clinical</span> Practice.
-        </h1>
+          <h1 style="font-size:clamp(2.5rem, 5vw, 3.75rem); font-weight:900; line-height:1.1; margin-bottom:1.5rem;">
+            Excellence in<br />
+            <span style="color:var(--primary); font-style:italic;">Clinical</span> Practice.
+          </h1>
 
-        <p style="color:var(--on-surface-variant); font-size:1.125rem; line-height:1.75; max-width:520px; margin-bottom:2.5rem;">
-          The Disciplined Curator System brings academic rigor to patient care. Manage your appointments with institutional trust and sophisticated ease.
-        </p>
+          <p
+            style="color:var(--on-surface-variant); font-size:1.125rem; line-height:1.75; max-width:520px; margin-bottom:2.5rem;">
+            The Disciplined Curator System brings academic rigor to patient care. Manage your appointments with
+            institutional trust and sophisticated ease.
+          </p>
 
-        <div style="display:flex; flex-wrap:wrap; gap:1rem; margin-bottom:3rem;">
-          <a href="book.html" class="btn btn-primary btn-lg">
-            Book Appointment
-            <span class="material-symbols-outlined">arrow_forward</span>
-          </a>
-          <a href="doctors.html" class="btn btn-secondary btn-lg">View Doctors</a>
+          <div style="display:flex; flex-wrap:wrap; gap:1rem; margin-bottom:3rem;">
+            <a href="book.html" class="btn btn-primary btn-lg">
+              Book Appointment
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </a>
+            <a href="doctors.html" class="btn btn-secondary btn-lg">View Doctors</a>
+          </div>
+
+          <!-- Quick Stats -->
+          <div class="animate-in-delay"
+            style="display:flex; gap:2.5rem; padding-top:1.5rem; border-top:1px solid var(--surface-container-high);">
+            <div>
+              <div style="font-family:var(--font-headline); font-size:2rem; font-weight:900; color:var(--primary);">50+
+              </div>
+              <div class="uppercase-label" style="color:var(--on-surface-variant);">Specialists</div>
+            </div>
+            <div style="width:1px; background:var(--outline-variant); opacity:0.3;"></div>
+            <div>
+              <div style="font-family:var(--font-headline); font-size:2rem; font-weight:900; color:var(--primary);">98%
+              </div>
+              <div class="uppercase-label" style="color:var(--on-surface-variant);">Satisfaction</div>
+            </div>
+            <div style="width:1px; background:var(--outline-variant); opacity:0.3;"></div>
+            <div>
+              <div style="font-family:var(--font-headline); font-size:2rem; font-weight:900; color:var(--primary);">24/7
+              </div>
+              <div class="uppercase-label" style="color:var(--on-surface-variant);">Support</div>
+            </div>
+          </div>
         </div>
 
-        <!-- Quick Stats -->
-        <div class="animate-in-delay" style="display:flex; gap:2.5rem; padding-top:1.5rem; border-top:1px solid var(--surface-container-high);">
-          <div>
-            <div style="font-family:var(--font-headline); font-size:2rem; font-weight:900; color:var(--primary);">50+</div>
-            <div class="uppercase-label" style="color:var(--on-surface-variant);">Specialists</div>
+        <!-- Right: Image (Desktop only) -->
+        <div style="display:none; position:relative; height:540px;">
+          <div
+            style="position:absolute; inset:0; background:var(--primary-fixed-dim); border-radius:2rem; transform:rotate(3deg) scale(0.95); opacity:0.2;">
           </div>
-          <div style="width:1px; background:var(--outline-variant); opacity:0.3;"></div>
-          <div>
-            <div style="font-family:var(--font-headline); font-size:2rem; font-weight:900; color:var(--primary);">98%</div>
-            <div class="uppercase-label" style="color:var(--on-surface-variant);">Satisfaction</div>
+          <div
+            style="position:absolute; inset:0; background:var(--surface-container-highest); border-radius:2rem; transform:rotate(-2deg) scale(0.95); opacity:0.5;">
           </div>
-          <div style="width:1px; background:var(--outline-variant); opacity:0.3;"></div>
-          <div>
-            <div style="font-family:var(--font-headline); font-size:2rem; font-weight:900; color:var(--primary);">24/7</div>
-            <div class="uppercase-label" style="color:var(--on-surface-variant);">Support</div>
-          </div>
+          <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80"
+            alt="Modern clinical research laboratory"
+            style="position:relative; z-index:1; width:100%; height:100%; object-fit:cover; border-radius:2rem; box-shadow:0 24px 64px rgba(0,0,0,0.15);" />
         </div>
       </div>
+    </section>
 
-      <!-- Right: Image (Desktop only) -->
-      <div style="display:none; position:relative; height:540px;">
-        <div style="position:absolute; inset:0; background:var(--primary-fixed-dim); border-radius:2rem; transform:rotate(3deg) scale(0.95); opacity:0.2;"></div>
-        <div style="position:absolute; inset:0; background:var(--surface-container-highest); border-radius:2rem; transform:rotate(-2deg) scale(0.95); opacity:0.5;"></div>
-        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80"
-             alt="Modern clinical research laboratory"
-             style="position:relative; z-index:1; width:100%; height:100%; object-fit:cover; border-radius:2rem; box-shadow:0 24px 64px rgba(0,0,0,0.15);"/>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════
+    <!-- ══════════════════════════════════
        FEATURES BENTO GRID
   ══════════════════════════════════ -->
-  <section class="section-low" style="padding: 6rem 0;">
-    <div class="container">
+    <section class="section-low" style="padding: 6rem 0;">
+      <div class="container">
 
-      <!-- Section Header -->
-      <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-end; margin-bottom:4rem; gap:2rem;">
-        <div style="max-width:520px;">
-          <h2 style="font-size:2.25rem; font-weight:800; margin-bottom:1rem;">Sophisticated Care Modules</h2>
-          <p style="color:var(--on-surface-variant);">Our system is built on decades of academic research, ensuring every patient interaction is handled with surgical precision and clinical empathy.</p>
+        <!-- Section Header -->
+        <div
+          style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-end; margin-bottom:4rem; gap:2rem;">
+          <div style="max-width:520px;">
+            <h2 style="font-size:2.25rem; font-weight:800; margin-bottom:1rem;">Sophisticated Care Modules</h2>
+            <p style="color:var(--on-surface-variant);">Our system is built on decades of academic research, ensuring
+              every patient interaction is handled with surgical precision and clinical empathy.</p>
+          </div>
+          <div style="display:flex; gap:0.5rem;">
+            <span style="width:3rem; height:4px; background:var(--primary); border-radius:999px; display:block;"></span>
+            <span
+              style="width:1rem; height:4px; background:var(--outline-variant); border-radius:999px; display:block;"></span>
+            <span
+              style="width:1rem; height:4px; background:var(--outline-variant); border-radius:999px; display:block;"></span>
+          </div>
         </div>
-        <div style="display:flex; gap:0.5rem;">
-          <span style="width:3rem; height:4px; background:var(--primary); border-radius:999px; display:block;"></span>
-          <span style="width:1rem; height:4px; background:var(--outline-variant); border-radius:999px; display:block;"></span>
-          <span style="width:1rem; height:4px; background:var(--outline-variant); border-radius:999px; display:block;"></span>
-        </div>
-      </div>
 
-      <!-- Bento Grid -->
-      <div style="display:grid; grid-template-columns:1fr; gap:1.5rem;">
-
-        <!-- Row 1 -->
+        <!-- Bento Grid -->
         <div style="display:grid; grid-template-columns:1fr; gap:1.5rem;">
-          <!-- Advanced Diagnostics -->
-          <div class="bento-card" style="background:var(--surface-container-lowest); box-shadow:var(--shadow-card);">
-            <span class="material-symbols-outlined" style="font-size:2.5rem; color:var(--primary); display:block; margin-bottom:1.5rem;">clinical_notes</span>
-            <h3 style="font-size:1.5rem; font-weight:800; margin-bottom:1rem;">Advanced Diagnostics</h3>
-            <p style="color:var(--on-surface-variant); line-height:1.7;">Access the latest in clinical screening and diagnostic tools curated by the University Board of Medicine.</p>
-            <div style="margin-top:2rem; padding-top:2rem; border-top:1px solid var(--surface-container);">
-              <a href="doctors.html" style="color:var(--primary); font-weight:700; display:inline-flex; align-items:center; gap:0.5rem;">
-                Explore Doctors <span class="material-symbols-outlined" style="font-size:1rem;">east</span>
-              </a>
+
+          <!-- Row 1 -->
+          <div style="display:grid; grid-template-columns:1fr; gap:1.5rem;">
+            <!-- Advanced Diagnostics -->
+            <div class="bento-card" style="background:var(--surface-container-lowest); box-shadow:var(--shadow-card);">
+              <span class="material-symbols-outlined"
+                style="font-size:2.5rem; color:var(--primary); display:block; margin-bottom:1.5rem;">clinical_notes</span>
+              <h3 style="font-size:1.5rem; font-weight:800; margin-bottom:1rem;">Advanced Diagnostics</h3>
+              <p style="color:var(--on-surface-variant); line-height:1.7;">Access the latest in clinical screening and
+                diagnostic tools curated by the University Board of Medicine.</p>
+              <div style="margin-top:2rem; padding-top:2rem; border-top:1px solid var(--surface-container);">
+                <a href="doctors.html"
+                  style="color:var(--primary); font-weight:700; display:inline-flex; align-items:center; gap:0.5rem;">
+                  Explore Doctors <span class="material-symbols-outlined" style="font-size:1rem;">east</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Priority Booking -->
+            <div class="bento-card hero-gradient" style="color:var(--on-primary);">
+              <span class="material-symbols-outlined"
+                style="font-size:2.5rem; display:block; margin-bottom:1.5rem;">schedule</span>
+              <h3 style="font-size:1.25rem; font-weight:800; margin-bottom:0.5rem;">Priority Booking</h3>
+              <p style="color:var(--primary-fixed-dim); font-size:0.875rem;">Real-time synchronization with faculty
+                schedules.</p>
+            </div>
+
+            <!-- Expert Consult -->
+            <div class="bento-card" style="background:var(--surface-container-lowest); box-shadow:var(--shadow-card);">
+              <span class="material-symbols-outlined"
+                style="font-size:2.5rem; color:var(--tertiary); display:block; margin-bottom:1.5rem;">diversity_3</span>
+              <h3 style="font-size:1.25rem; font-weight:800; margin-bottom:0.5rem;">Expert Consult</h3>
+              <p style="color:var(--on-surface-variant); font-size:0.875rem;">Direct access to leading specialists and
+                senior residents.</p>
             </div>
           </div>
 
-          <!-- Priority Booking -->
-          <div class="bento-card hero-gradient" style="color:var(--on-primary);">
-            <span class="material-symbols-outlined" style="font-size:2.5rem; display:block; margin-bottom:1.5rem;">schedule</span>
-            <h3 style="font-size:1.25rem; font-weight:800; margin-bottom:0.5rem;">Priority Booking</h3>
-            <p style="color:var(--primary-fixed-dim); font-size:0.875rem;">Real-time synchronization with faculty schedules.</p>
-          </div>
-
-          <!-- Expert Consult -->
-          <div class="bento-card" style="background:var(--surface-container-lowest); box-shadow:var(--shadow-card);">
-            <span class="material-symbols-outlined" style="font-size:2.5rem; color:var(--tertiary); display:block; margin-bottom:1.5rem;">diversity_3</span>
-            <h3 style="font-size:1.25rem; font-weight:800; margin-bottom:0.5rem;">Expert Consult</h3>
-            <p style="color:var(--on-surface-variant); font-size:0.875rem;">Direct access to leading specialists and senior residents.</p>
-          </div>
-        </div>
-
-        <!-- Row 2 -->
-        <div style="display:grid; grid-template-columns:1fr; gap:1.5rem;">
-          <!-- Academic Network -->
-          <div class="bento-card" style="background:var(--tertiary-container); position:relative; overflow:hidden;">
-            <div style="position:relative; z-index:1;">
-              <h3 style="font-size:1.5rem; font-weight:800; color:var(--on-tertiary-container); margin-bottom:1rem;">Academic Network</h3>
-              <p style="color:var(--on-tertiary-container); opacity:0.8; font-size:0.875rem;">Connect with over 50 university-affiliated clinics across the region.</p>
+          <!-- Row 2 -->
+          <div style="display:grid; grid-template-columns:1fr; gap:1.5rem;">
+            <!-- Academic Network -->
+            <div class="bento-card" style="background:var(--tertiary-container); position:relative; overflow:hidden;">
+              <div style="position:relative; z-index:1;">
+                <h3 style="font-size:1.5rem; font-weight:800; color:var(--on-tertiary-container); margin-bottom:1rem;">
+                  Academic Network</h3>
+                <p style="color:var(--on-tertiary-container); opacity:0.8; font-size:0.875rem;">Connect with over 50
+                  university-affiliated clinics across the region.</p>
+              </div>
+              <span class="material-symbols-outlined"
+                style="position:absolute; right:-1rem; bottom:-1rem; font-size:8rem; color:var(--on-tertiary-container); opacity:0.05; transform:rotate(12deg);">account_balance</span>
             </div>
-            <span class="material-symbols-outlined" style="position:absolute; right:-1rem; bottom:-1rem; font-size:8rem; color:var(--on-tertiary-container); opacity:0.05; transform:rotate(12deg);">account_balance</span>
           </div>
+
         </div>
-
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ══════════════════════════════════
+    <!-- ══════════════════════════════════
        ASYMMETRIC INFO SECTION
   ══════════════════════════════════ -->
-  <section class="section-surface" style="padding: 8rem 0;">
-    <div class="container" style="display:grid; grid-template-columns:1fr; gap:3rem; align-items:center;">
+    <section class="section-surface" style="padding: 8rem 0;">
+      <div class="container" style="display:grid; grid-template-columns:1fr; gap:3rem; align-items:center;">
 
-      <!-- Image -->
-      <div style="position:relative;">
-        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=700&q=80"
-             alt="Professional doctor in modern clinic"
-             style="width:100%; height:480px; object-fit:cover; border-radius:3rem; box-shadow:0 16px 48px rgba(0,0,0,0.12);"/>
-        <!-- Floating Badge -->
-        <div style="position:absolute; bottom:-2rem; right:-1rem; background:var(--surface-container-lowest); padding:1.5rem; border-radius:1.5rem; box-shadow:var(--shadow-modal); max-width:260px;">
-          <div style="display:flex; align-items:center; gap:1rem; margin-bottom:1rem;">
-            <div style="width:3rem; height:3rem; background:var(--primary-container); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--primary);">
-              <span class="material-symbols-outlined">verified</span>
+        <!-- Image -->
+        <div style="position:relative;">
+          <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=700&q=80"
+            alt="Professional doctor in modern clinic"
+            style="width:100%; height:480px; object-fit:cover; border-radius:3rem; box-shadow:0 16px 48px rgba(0,0,0,0.12);" />
+          <!-- Floating Badge -->
+          <div
+            style="position:absolute; bottom:-2rem; right:-1rem; background:var(--surface-container-lowest); padding:1.5rem; border-radius:1.5rem; box-shadow:var(--shadow-modal); max-width:260px;">
+            <div style="display:flex; align-items:center; gap:1rem; margin-bottom:1rem;">
+              <div
+                style="width:3rem; height:3rem; background:var(--primary-container); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--primary);">
+                <span class="material-symbols-outlined">verified</span>
+              </div>
+              <div>
+                <div style="font-size:0.875rem; font-weight:700;">Faculty Verified</div>
+                <div style="font-size:0.75rem; color:var(--on-surface-variant);">Board Certified Professionals</div>
+              </div>
             </div>
-            <div>
-              <div style="font-size:0.875rem; font-weight:700;">Faculty Verified</div>
-              <div style="font-size:0.75rem; color:var(--on-surface-variant);">Board Certified Professionals</div>
-            </div>
-          </div>
-          <p style="font-size:0.75rem; color:var(--on-surface-variant); font-style:italic;">"The intersection of academic rigor and compassionate care."</p>
-        </div>
-      </div>
-
-      <!-- Text -->
-      <div style="padding-top:3rem;">
-        <h2 style="font-size:clamp(2rem, 4vw, 3rem); font-weight:900; margin-bottom:2rem; line-height:1.15;">
-          Beyond a standard <span style="color:var(--primary);">Medical</span> facility.
-        </h2>
-
-        <div style="display:flex; flex-direction:column; gap:2.5rem; margin-bottom:3rem;">
-          <div style="display:flex; gap:1.5rem;">
-            <div style="flex-shrink:0; width:4px; height:1.25rem; background:var(--primary); border-radius:999px; margin-top:6px;"></div>
-            <div>
-              <h4 style="font-size:1.125rem; font-weight:700; margin-bottom:0.5rem;">Curated Specialist Matching</h4>
-              <p style="color:var(--on-surface-variant);">Our system matches your specific symptoms with the most published specialists in that medical field.</p>
-            </div>
-          </div>
-          <div style="display:flex; gap:1.5rem;">
-            <div style="flex-shrink:0; width:4px; height:1.25rem; background:var(--tertiary); border-radius:999px; margin-top:6px;"></div>
-            <div>
-              <h4 style="font-size:1.125rem; font-weight:700; margin-bottom:0.5rem;">Longitudinal Care Tracks</h4>
-              <p style="color:var(--on-surface-variant);">We curate long-term wellness plans based on comprehensive academic datasets.</p>
-            </div>
-          </div>
-          <div style="display:flex; gap:1.5rem;">
-            <div style="flex-shrink:0; width:4px; height:1.25rem; background:var(--primary-fixed-dim); border-radius:999px; margin-top:6px;"></div>
-            <div>
-              <h4 style="font-size:1.125rem; font-weight:700; margin-bottom:0.5rem;">Institutional Privacy Protocol</h4>
-              <p style="color:var(--on-surface-variant);">University-grade encryption protects your sensitive clinical data.</p>
-            </div>
+            <p style="font-size:0.75rem; color:var(--on-surface-variant); font-style:italic;">"The intersection of
+              academic rigor and compassionate care."</p>
           </div>
         </div>
 
-        <a href="auth.html#register" class="btn btn-primary btn-lg">
-          Get Started Today
-          <span class="material-symbols-outlined">arrow_forward</span>
-        </a>
+        <!-- Text -->
+        <div style="padding-top:3rem;">
+          <h2 style="font-size:clamp(2rem, 4vw, 3rem); font-weight:900; margin-bottom:2rem; line-height:1.15;">
+            Beyond a standard <span style="color:var(--primary);">Medical</span> facility.
+          </h2>
+
+          <div style="display:flex; flex-direction:column; gap:2.5rem; margin-bottom:3rem;">
+            <div style="display:flex; gap:1.5rem;">
+              <div
+                style="flex-shrink:0; width:4px; height:1.25rem; background:var(--primary); border-radius:999px; margin-top:6px;">
+              </div>
+              <div>
+                <h4 style="font-size:1.125rem; font-weight:700; margin-bottom:0.5rem;">Curated Specialist Matching</h4>
+                <p style="color:var(--on-surface-variant);">Our system matches your specific symptoms with the most
+                  published specialists in that medical field.</p>
+              </div>
+            </div>
+            <div style="display:flex; gap:1.5rem;">
+              <div
+                style="flex-shrink:0; width:4px; height:1.25rem; background:var(--tertiary); border-radius:999px; margin-top:6px;">
+              </div>
+              <div>
+                <h4 style="font-size:1.125rem; font-weight:700; margin-bottom:0.5rem;">Longitudinal Care Tracks</h4>
+                <p style="color:var(--on-surface-variant);">We curate long-term wellness plans based on comprehensive
+                  academic datasets.</p>
+              </div>
+            </div>
+            <div style="display:flex; gap:1.5rem;">
+              <div
+                style="flex-shrink:0; width:4px; height:1.25rem; background:var(--primary-fixed-dim); border-radius:999px; margin-top:6px;">
+              </div>
+              <div>
+                <h4 style="font-size:1.125rem; font-weight:700; margin-bottom:0.5rem;">Institutional Privacy Protocol
+                </h4>
+                <p style="color:var(--on-surface-variant);">University-grade encryption protects your sensitive clinical
+                  data.</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="auth.html#register" class="btn btn-primary btn-lg">
+            Get Started Today
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </a>
+        </div>
+
       </div>
+    </section>
 
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════
+    <!-- ══════════════════════════════════
        HOW IT WORKS
   ══════════════════════════════════ -->
-  <section class="section-low" style="padding: 6rem 0;">
-    <div class="container">
-      <div style="text-align:center; margin-bottom:4rem;">
-        <h2 style="font-size:2.25rem; font-weight:800; margin-bottom:1rem;">How It Works</h2>
-        <p style="color:var(--on-surface-variant); max-width:500px; margin:0 auto;">Three simple steps to connect with the best medical professionals in our network.</p>
+    <section class="section-low" style="padding: 6rem 0;">
+      <div class="container">
+        <div style="text-align:center; margin-bottom:4rem;">
+          <h2 style="font-size:2.25rem; font-weight:800; margin-bottom:1rem;">How It Works</h2>
+          <p style="color:var(--on-surface-variant); max-width:500px; margin:0 auto;">Three simple steps to connect with
+            the best medical professionals in our network.</p>
+        </div>
+
+        <div class="grid-3col">
+          <!-- Step 1 -->
+          <div
+            style="background:var(--surface-container-lowest); border-radius:2rem; padding:2.5rem; text-align:center; box-shadow:var(--shadow-card);">
+            <div
+              style="width:4rem; height:4rem; background:var(--primary-container); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 1.5rem;">
+              <span class="material-symbols-outlined" style="color:var(--primary); font-size:1.75rem;">person_add</span>
+            </div>
+            <h3 style="font-size:1.125rem; font-weight:800; margin-bottom:0.75rem;">1. Register</h3>
+            <p style="color:var(--on-surface-variant); font-size:0.875rem; line-height:1.7;">Create your scholar account
+              with your email and personal information.</p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="hero-gradient"
+            style="border-radius:2rem; padding:2.5rem; text-align:center; color:var(--on-primary); box-shadow:0 8px 24px rgba(17,92,185,0.3);">
+            <div
+              style="width:4rem; height:4rem; background:rgba(255,255,255,0.2); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 1.5rem;">
+              <span class="material-symbols-outlined" style="font-size:1.75rem;">medical_services</span>
+            </div>
+            <h3 style="font-size:1.125rem; font-weight:800; margin-bottom:0.75rem;">2. Choose a Doctor</h3>
+            <p style="color:var(--primary-fixed-dim); font-size:0.875rem; line-height:1.7;">Browse our curated list of
+              verified specialists and select the right match.</p>
+          </div>
+
+          <!-- Step 3 -->
+          <div
+            style="background:var(--surface-container-lowest); border-radius:2rem; padding:2.5rem; text-align:center; box-shadow:var(--shadow-card);">
+            <div
+              style="width:4rem; height:4rem; background:var(--tertiary-container); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 1.5rem;">
+              <span class="material-symbols-outlined"
+                style="color:var(--on-tertiary-container); font-size:1.75rem;">event_available</span>
+            </div>
+            <h3 style="font-size:1.125rem; font-weight:800; margin-bottom:0.75rem;">3. Book &amp; Track</h3>
+            <p style="color:var(--on-surface-variant); font-size:0.875rem; line-height:1.7;">Book your appointment and
+              track your complete medical history in one place.</p>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="grid-3col">
-        <!-- Step 1 -->
-        <div style="background:var(--surface-container-lowest); border-radius:2rem; padding:2.5rem; text-align:center; box-shadow:var(--shadow-card);">
-          <div style="width:4rem; height:4rem; background:var(--primary-container); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 1.5rem;">
-            <span class="material-symbols-outlined" style="color:var(--primary); font-size:1.75rem;">person_add</span>
-          </div>
-          <h3 style="font-size:1.125rem; font-weight:800; margin-bottom:0.75rem;">1. Register</h3>
-          <p style="color:var(--on-surface-variant); font-size:0.875rem; line-height:1.7;">Create your scholar account with your email and personal information.</p>
-        </div>
+  </main>
 
-        <!-- Step 2 -->
-        <div class="hero-gradient" style="border-radius:2rem; padding:2.5rem; text-align:center; color:var(--on-primary); box-shadow:0 8px 24px rgba(17,92,185,0.3);">
-          <div style="width:4rem; height:4rem; background:rgba(255,255,255,0.2); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 1.5rem;">
-            <span class="material-symbols-outlined" style="font-size:1.75rem;">medical_services</span>
-          </div>
-          <h3 style="font-size:1.125rem; font-weight:800; margin-bottom:0.75rem;">2. Choose a Doctor</h3>
-          <p style="color:var(--primary-fixed-dim); font-size:0.875rem; line-height:1.7;">Browse our curated list of verified specialists and select the right match.</p>
-        </div>
+  <!-- Floating Action Button -->
+  <a href="book.html" class="fab" title="Book Appointment">
+    <span class="material-symbols-outlined">add</span>
+  </a>
 
-        <!-- Step 3 -->
-        <div style="background:var(--surface-container-lowest); border-radius:2rem; padding:2.5rem; text-align:center; box-shadow:var(--shadow-card);">
-          <div style="width:4rem; height:4rem; background:var(--tertiary-container); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 1.5rem;">
-            <span class="material-symbols-outlined" style="color:var(--on-tertiary-container); font-size:1.75rem;">event_available</span>
-          </div>
-          <h3 style="font-size:1.125rem; font-weight:800; margin-bottom:0.75rem;">3. Book &amp; Track</h3>
-          <p style="color:var(--on-surface-variant); font-size:0.875rem; line-height:1.7;">Book your appointment and track your complete medical history in one place.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<!-- Floating Action Button -->
-<a href="book.html" class="fab" title="Book Appointment">
-  <span class="material-symbols-outlined">add</span>
-</a>
-
-<!-- ══════════════════════════════════
+  <!-- ══════════════════════════════════
      FOOTER
 ══════════════════════════════════ -->
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-brand">CLINIC SCHOLAR</div>
-    <ul class="footer-links">
-      <li><a href="doctors.html">Our Doctors</a></li>
-      <li><a href="book.html">Book Appointment</a></li>
-      <li><a href="auth.html">Login / Register</a></li>
-      <li><a href="#">Privacy Policy</a></li>
-      <li><a href="mailto:s230005904@seu.edu.sa">Contact Support</a></li>
-    </ul>
-    <div class="footer-copy">
-      &copy; 2026 University Clinical Standard.<br/>
-      The Disciplined Curator System.
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-brand">CLINIC SCHOLAR</div>
+      <ul class="footer-links">
+        <li><a href="doctors.html">Our Doctors</a></li>
+        <li><a href="book.html">Book Appointment</a></li>
+        <li><a href="auth.html">Login / Register</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Contact Support</a></li>
+      </ul>
+      <div class="footer-copy">
+        &copy; 2026 University Clinical Standard.<br />
+        The Disciplined Curator System.
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>
+
+  <!-- Session-aware navbar -->
+  <script>
+    (function () {
+      try {
+        var user = JSON.parse(localStorage.getItem('clinic_user'));
+        if (user && user.name) {
+          var navActions = document.querySelector('.navbar-actions');
+          if (navActions) {
+            navActions.innerHTML =
+              '<span style="font-size:0.875rem; color:var(--on-surface-variant);">\uD83D\uDC4B ' + user.name + '</span>' +
+              '<button onclick="localStorage.removeItem(\'clinic_user\'); window.location.href=\'index.html\'" class="btn btn-outline btn-sm">Logout</button>';
+          }
+        }
+      } catch (e) { }
+    })();
+  </script>
 
 </body>
+
 </html>

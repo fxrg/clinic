@@ -22,7 +22,7 @@
         <li><a href="index.html"   class="nav-link">Home</a></li>
         <li><a href="doctors.html" class="nav-link active">Doctors</a></li>
         <li><a href="book.html"    class="nav-link">Book</a></li>
-        <li><a href="history.php"  class="nav-link">History</a></li>
+        <li><a href="history.html"  class="nav-link">History</a></li>
       </ul>
     </nav>
     <div class="navbar-actions">
@@ -245,8 +245,8 @@
     <ul class="footer-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="book.html">Book Appointment</a></li>
-      <li><a href="history.php">My History</a></li>
-      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="history.html">My History</a></li>
+      <li><a href="privacy.html">Privacy Policy</a></li>
     </ul>
     <div class="footer-copy">&copy; 2026 University Clinical Standard.<br/>The Disciplined Curator System.</div>
   </div>
@@ -254,6 +254,23 @@
 
 <!-- Page-specific JavaScript -->
 <script src="doctors.js"></script>
+
+<!-- Session-aware navbar -->
+<script>
+(function() {
+    try {
+        var user = JSON.parse(localStorage.getItem('clinic_user'));
+        if (user && user.name) {
+            var navActions = document.querySelector('.navbar-actions');
+            if (navActions) {
+                navActions.innerHTML =
+                    '<span style="font-size:0.875rem; color:var(--on-surface-variant);">\uD83D\uDC4B ' + user.name + '</span>' +
+                    '<button onclick="localStorage.removeItem(\'clinic_user\'); window.location.href=\'index.html\'" class="btn btn-outline btn-sm">Logout</button>';
+            }
+        }
+    } catch(e) {}
+})();
+</script>
 
 </body>
 </html>

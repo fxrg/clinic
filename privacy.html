@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Privacy Policy — Learn how Clinic Scholar protects your personal and medical data under university-grade security standards."/>
+  <title>Clinic Scholar | Privacy Policy</title>
+
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1"/>
+
+  <style>
+    /* ── Privacy page specific styles ── */
+    .privacy-hero {
+      background: linear-gradient(135deg, #115cb9 0%, #0050a7 100%);
+      padding: 7rem 1.5rem 5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .privacy-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0; right: 0;
+      height: 3.5rem;
+      background: var(--surface);
+      border-radius: 2rem 2rem 0 0;
+    }
+    .privacy-hero-circle {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+    }
+
+    .privacy-container {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 1.5rem 6rem;
+    }
+
+    .privacy-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      align-items: center;
+      justify-content: center;
+      margin-top: -2rem;
+      margin-bottom: 3rem;
+      position: relative;
+      z-index: 2;
+    }
+    .privacy-meta-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--surface-container-lowest);
+      padding: 0.75rem 1.25rem;
+      border-radius: 999px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: var(--on-surface);
+    }
+    .privacy-meta-chip .material-symbols-outlined {
+      font-size: 1.1rem;
+      color: var(--primary);
+    }
+
+    .policy-section {
+      margin-bottom: 3rem;
+    }
+    .policy-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .policy-card {
+      background: var(--surface-container-lowest);
+      border-radius: 1.25rem;
+      padding: 2rem 2.25rem;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.05);
+      transition: box-shadow 0.2s;
+    }
+    .policy-card:hover {
+      box-shadow: 0 4px 24px rgba(0,0,0,0.09);
+    }
+
+    .policy-card h2 {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.02em;
+    }
+    .policy-card h2 .icon-circle {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .policy-card h2 .material-symbols-outlined {
+      font-size: 1.25rem;
+    }
+
+    .policy-card p,
+    .policy-card li {
+      color: var(--on-surface-variant);
+      font-size: 0.9rem;
+      line-height: 1.8;
+    }
+    .policy-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+    }
+    .policy-card ul li {
+      position: relative;
+      padding-left: 1.75rem;
+      margin-bottom: 0.75rem;
+    }
+    .policy-card ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.55rem;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--primary);
+      opacity: 0.5;
+    }
+
+    .policy-highlight {
+      background: var(--primary-container);
+      border-radius: 0.75rem;
+      padding: 1.25rem 1.5rem;
+      margin-top: 1.25rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+    .policy-highlight .material-symbols-outlined {
+      color: var(--on-primary-container);
+      font-size: 1.25rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .policy-highlight p {
+      color: var(--on-primary-container);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      line-height: 1.6;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1.25rem;
+    }
+    .contact-item {
+      background: var(--surface-container-low);
+      padding: 1.25rem;
+      border-radius: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .contact-item .material-symbols-outlined {
+      color: var(--primary);
+      font-size: 1.25rem;
+    }
+    .contact-item div p:first-child {
+      font-size: 0.65rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--on-surface-variant);
+      margin-bottom: 0.15rem;
+    }
+    .contact-item div p:last-child {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--on-surface);
+    }
+
+    /* Table of Contents */
+    .toc {
+      background: var(--surface-container-low);
+      border-radius: 1rem;
+      padding: 1.75rem 2rem;
+      margin-bottom: 3rem;
+    }
+    .toc h3 {
+      font-size: 0.875rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .toc h3 .material-symbols-outlined {
+      font-size: 1.1rem;
+      color: var(--primary);
+    }
+    .toc ol {
+      list-style: none;
+      counter-reset: toc-counter;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.5rem;
+    }
+    .toc ol li {
+      counter-increment: toc-counter;
+    }
+    .toc ol li a {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.5rem;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--on-surface-variant);
+      text-decoration: none;
+      transition: background 0.15s, color 0.15s;
+    }
+    .toc ol li a:hover {
+      background: var(--surface-container);
+      color: var(--primary);
+    }
+    .toc ol li a::before {
+      content: counter(toc-counter, decimal-leading-zero);
+      font-size: 0.7rem;
+      font-weight: 900;
+      color: var(--primary);
+      background: var(--primary-container);
+      width: 1.75rem;
+      height: 1.75rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 640px) {
+      .privacy-hero { padding: 6rem 1rem 4rem; }
+      .policy-card { padding: 1.5rem; }
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Navbar ─────────────────────────────────────────── -->
+<header class="navbar">
+  <div class="navbar-inner">
+    <a href="index.html" class="navbar-brand">Clinic Scholar</a>
+    <nav>
+      <ul class="navbar-nav">
+        <li><a href="index.html"   class="nav-link">Home</a></li>
+        <li><a href="doctors.html" class="nav-link">Doctors</a></li>
+        <li><a href="book.html"    class="nav-link">Book</a></li>
+        <li><a href="history.html" class="nav-link">History</a></li>
+      </ul>
+    </nav>
+    <div class="navbar-actions">
+      <a href="auth.html#login"    class="btn btn-ghost btn-sm">Login</a>
+      <a href="auth.html#register" class="btn btn-primary btn-sm">Register</a>
+    </div>
+  </div>
+</header>
+
+<!-- ── Hero Strip ─────────────────────────────────────── -->
+<div class="privacy-hero">
+  <div class="privacy-hero-circle" style="width:18rem; height:18rem; top:-6rem; left:-5rem;"></div>
+  <div class="privacy-hero-circle" style="width:10rem; height:10rem; bottom:2rem; right:-3rem;"></div>
+  <div class="privacy-hero-circle" style="width:6rem; height:6rem; top:2rem; right:15%;"></div>
+
+  <div style="position:relative; z-index:1;">
+    <div style="width:4rem; height:4rem; background:rgba(255,255,255,0.15); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 1.25rem;">
+      <span class="material-symbols-outlined" style="color:#fff; font-size:2rem;">shield</span>
+    </div>
+    <h1 style="font-size:clamp(1.75rem, 4vw, 2.5rem); font-weight:900; color:#fff; letter-spacing:-0.03em; margin-bottom:0.5rem;">
+      Privacy Policy
+    </h1>
+    <p style="color:rgba(255,255,255,0.72); font-size:0.9375rem; max-width:480px; margin:0 auto;">
+      Your trust is our priority. Learn how we protect your personal and medical data.
+    </p>
+  </div>
+</div>
+
+<!-- ── Main Content ──────────────────────────────────── -->
+<main style="background:var(--surface);">
+  <div class="privacy-container">
+
+    <!-- Meta Chips -->
+    <div class="privacy-meta">
+      <div class="privacy-meta-chip">
+        <span class="material-symbols-outlined">calendar_today</span>
+        Last Updated: April 18, 2026
+      </div>
+      <div class="privacy-meta-chip">
+        <span class="material-symbols-outlined">verified</span>
+        HIPAA Compliant
+      </div>
+    </div>
+
+    <!-- Table of Contents -->
+    <div class="toc">
+      <h3>
+        <span class="material-symbols-outlined">list</span>
+        Table of Contents
+      </h3>
+      <ol>
+        <li><a href="#info-collect">Information We Collect</a></li>
+        <li><a href="#info-use">How We Use Your Data</a></li>
+        <li><a href="#data-security">Data Security</a></li>
+        <li><a href="#cookies">Cookies & Tracking</a></li>
+        <li><a href="#data-sharing">Data Sharing</a></li>
+        <li><a href="#patient-rights">Your Rights</a></li>
+        <li><a href="#data-retention">Data Retention</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ol>
+    </div>
+
+    <!-- Section 1: Information We Collect -->
+    <section class="policy-section" id="info-collect">
+      <div class="policy-card">
+        <h2>
+          <div class="icon-circle" style="background:var(--primary-container);">
+            <span class="material-symbols-outlined" style="color:var(--on-primary-container);">folder_shared</span>
+          </div>
+          1. Information We Collect
+        </h2>
+        <p>We collect only the information necessary to provide you with quality healthcare services and manage your appointments efficiently. The types of information we collect include:</p>
+        <ul>
+          <li><strong>Personal Information:</strong> Full name, email address, and account credentials when you register for an account.</li>
+          <li><strong>Appointment Data:</strong> Doctor selection, appointment dates and times, specialty information, and any notes you provide about your symptoms or visit reason.</li>
+          <li><strong>Usage Data:</strong> Browser type, pages visited, and interaction patterns to improve our service quality and user experience.</li>
+          <li><strong>Device Information:</strong> Device type, operating system, and screen resolution to ensure proper display and responsive design.</li>
+        </ul>
+        <div class="policy-highlight">
+          <span class="material-symbols-outlined">info</span>
+          <p>We never collect sensitive financial information such as credit card numbers or banking details through our appointment system.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: How We Use Your Data -->
+    <section class="policy-section" id="info-use">
+      <div class="policy-card">
+        <h2>
+          <div class="icon-circle" style="background:var(--tertiary-container);">
+            <span class="material-symbols-outlined" style="color:var(--on-tertiary-container);">analytics</span>
+          </div>
+          2. How We Use Your Data
+        </h2>
+        <p>Your personal data is used strictly for the following purposes:</p>
+        <ul>
+          <li><strong>Appointment Management:</strong> Scheduling, confirming, rescheduling, and tracking your medical appointments with our specialists.</li>
+          <li><strong>Account Authentication:</strong> Verifying your identity to protect access to your personal health records and booking history.</li>
+          <li><strong>Communication:</strong> Sending appointment reminders, confirmations, and important updates about your scheduled visits.</li>
+          <li><strong>Service Improvement:</strong> Analyzing anonymized usage patterns to enhance our platform's usability, performance, and features.</li>
+          <li><strong>Compliance:</strong> Meeting legal and regulatory obligations related to healthcare data management.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 3: Data Security -->
+    <section class="policy-section" id="data-security">
+      <div class="policy-card">
+        <h2>
+          <div class="icon-circle" style="background:var(--primary-container);">
+            <span class="material-symbols-outlined" style="color:var(--on-primary-container);">lock</span>
+          </div>
+          3. Data Security
+        </h2>
+        <p>We implement comprehensive security measures to protect your personal and medical information:</p>
+        <ul>
+          <li><strong>Encryption:</strong> All data transmitted between your browser and our servers is encrypted using industry-standard TLS/SSL protocols.</li>
+          <li><strong>Password Protection:</strong> User passwords are hashed using bcrypt algorithm and are never stored in plain text.</li>
+          <li><strong>Access Control:</strong> Strict role-based access ensures only authorized personnel can view sensitive patient data.</li>
+          <li><strong>Regular Audits:</strong> Our systems undergo periodic security audits and vulnerability assessments by university IT security teams.</li>
+          <li><strong>Local Storage:</strong> When using the offline-capable version, your data is stored locally on your device and is not transmitted externally.</li>
+        </ul>
+        <div class="policy-highlight">
+          <span class="material-symbols-outlined">verified_user</span>
+          <p>Our security infrastructure meets university-grade encryption standards, ensuring your clinical data is protected at the highest institutional level.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Cookies & Tracking -->
+    <section class="policy-section" id="cookies">
+      <div class="policy-card">
+        <h2>
+          <div class="icon-circle" style="background:var(--secondary-container);">
+            <span class="material-symbols-outlined" style="color:var(--on-secondary-container);">cookie</span>
+          </div>
+          4. Cookies & Tracking
+        </h2>
+        <p>Our application uses minimal browser storage to enhance your experience:</p>
+        <ul>
+          <li><strong>Session Storage:</strong> We use localStorage to maintain your login session and store appointment data for seamless interaction across page visits.</li>
+          <li><strong>Essential Cookies:</strong> Session cookies are used to authenticate your identity and maintain secure access to protected pages.</li>
+          <li><strong>No Third-Party Tracking:</strong> We do not use third-party analytics, advertising trackers, or social media tracking pixels on our platform.</li>
+        </ul>
+        <p style="margin-top:1rem;">You can clear your browser's local storage at any time through your browser settings, which will sign you out and remove locally stored appointment data.</p>
+      </div>
+    </section>
+
+    <!-- Section 5: Data Sharing -->
+    <section class="policy-section" id="data-sharing">
+      <div class="policy-card">
+        <h2>
+          <div class="icon-circle" style="background:var(--tertiary-container);">
+            <span class="material-symbols-outlined" style="color:var(--on-tertiary-container);">share</span>
+          </div>
+          5. Data Sharing
+        </h2>
+        <p>We are committed to keeping your data private. Your information may be shared only in the following limited circumstances:</p>
+        <ul>
+          <li><strong>Healthcare Providers:</strong> Appointment details are shared with the specific doctor you have booked to ensure they are prepared for your visit.</li>
+          <li><strong>University Administration:</strong> Anonymized, aggregated data may be used for institutional reporting and quality improvement purposes.</li>
+          <li><strong>Legal Compliance:</strong> We may disclose information if required by law, court order, or governmental regulation.</li>
+        </ul>
+        <div class="policy-highlight">
+          <span class="material-symbols-outlined">block</span>
+          <p>We never sell, rent, or trade your personal or medical information to third parties for marketing or commercial purposes.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Your Rights -->
+    <section class="policy-section" id="patient-rights">
+      <div class="policy-card">
+        <h2>
+          <div class="icon-circle" style="background:var(--primary-container);">
+            <span class="material-symbols-outlined" style="color:var(--on-primary-container);">gavel</span>
+          </div>
+          6. Your Rights
+        </h2>
+        <p>As a patient and user of Clinic Scholar, you have the following rights regarding your personal data:</p>
+        <ul>
+          <li><strong>Access:</strong> You can view all your stored data including appointment records and personal information through your account dashboard.</li>
+          <li><strong>Correction:</strong> You have the right to request corrections to any inaccurate or incomplete personal information.</li>
+          <li><strong>Deletion:</strong> You can request the deletion of your account and all associated data by contacting our support team.</li>
+          <li><strong>Portability:</strong> You may request a copy of your data in a standard, machine-readable format.</li>
+          <li><strong>Withdrawal:</strong> You can withdraw consent for data processing at any time, which may affect your ability to use certain features.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 7: Data Retention -->
+    <section class="policy-section" id="data-retention">
+      <div class="policy-card">
+        <h2>
+          <div class="icon-circle" style="background:var(--secondary-container);">
+            <span class="material-symbols-outlined" style="color:var(--on-secondary-container);">schedule</span>
+          </div>
+          7. Data Retention
+        </h2>
+        <p>We retain your data for the following periods:</p>
+        <ul>
+          <li><strong>Active Accounts:</strong> Personal information and appointment history are retained as long as your account remains active.</li>
+          <li><strong>Inactive Accounts:</strong> Accounts inactive for more than 24 months may be flagged for deletion with prior notification.</li>
+          <li><strong>Completed Appointments:</strong> Historical appointment records are maintained for a minimum of 5 years for medical record-keeping compliance.</li>
+          <li><strong>Post-Deletion:</strong> After account deletion, all personal data is permanently removed within 30 days, except where retention is required by law.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 8: Contact Us -->
+    <section class="policy-section" id="contact">
+      <div class="policy-card">
+        <h2>
+          <div class="icon-circle" style="background:var(--primary-container);">
+            <span class="material-symbols-outlined" style="color:var(--on-primary-container);">support_agent</span>
+          </div>
+          8. Contact Us
+        </h2>
+        <p>If you have any questions, concerns, or requests regarding this Privacy Policy or how we handle your data, please reach out to us:</p>
+
+        <div class="contact-grid">
+          <div class="contact-item">
+            <span class="material-symbols-outlined">mail</span>
+            <div>
+              <p>Email</p>
+              <p>privacy@clinic-scholar.edu</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="material-symbols-outlined">call</span>
+            <div>
+              <p>Phone</p>
+              <p>+966 11 000 0000</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="material-symbols-outlined">location_on</span>
+            <div>
+              <p>Address</p>
+              <p>University Campus, Building 7</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="policy-highlight" style="margin-top:1.5rem;">
+          <span class="material-symbols-outlined">timer</span>
+          <p>We aim to respond to all privacy-related inquiries within 3 business days. For urgent concerns regarding data breaches, please call our support line directly.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Back to Home CTA -->
+    <div style="text-align:center; padding-top:2rem;">
+      <a href="index.html" class="btn btn-primary btn-lg" style="display:inline-flex;">
+        <span class="material-symbols-outlined">arrow_back</span>
+        Back to Home
+      </a>
+    </div>
+
+  </div>
+</main>
+
+<!-- Footer -->
+<footer class="site-footer" style="margin-top:0;">
+  <div class="container">
+    <div class="footer-brand">CLINIC SCHOLAR</div>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="doctors.html">Our Doctors</a></li>
+      <li><a href="book.html">Book Appointment</a></li>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="#contact">Contact Support</a></li>
+    </ul>
+    <div class="footer-copy">
+      &copy; 2026 University Clinical Standard.<br/>
+      The Disciplined Curator System.
+    </div>
+  </div>
+</footer>
+
+<!-- Session-aware navbar -->
+<script>
+(function() {
+    try {
+        var user = JSON.parse(localStorage.getItem('clinic_user'));
+        if (user && user.name) {
+            var navActions = document.querySelector('.navbar-actions');
+            if (navActions) {
+                navActions.innerHTML =
+                    '<span style="font-size:0.875rem; color:var(--on-surface-variant);">\uD83D\uDC4B ' + user.name + '</span>' +
+                    '<button onclick="localStorage.removeItem(\'clinic_user\'); window.location.href=\'index.html\'" class="btn btn-outline btn-sm">Logout</button>';
+            }
+        }
+    } catch(e) {}
+})();
+</script>
+
+</body>
+</html>
