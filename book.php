@@ -211,7 +211,7 @@ foreach ($doctors as $d) $doctor_map[$d['name']] = $d['specialty'];
   <div class="flex flex-col md:flex-row justify-between items-center px-12 gap-8 max-w-[1440px] mx-auto">
     <div class="font-headline font-black text-slate-400">Clinic Scholar</div>
     <div class="flex flex-wrap justify-center gap-8">
-      <a class="text-slate-500 font-body text-xs uppercase tracking-widest hover:text-blue-600 hover:underline underline-offset-4 transition-all" href="#">Contact Support</a>
+      <a class="text-slate-500 font-body text-xs uppercase tracking-widest hover:text-blue-600 hover:underline underline-offset-4 transition-all" href="mailto:s230005904@seu.edu.sa">Contact Support</a>
       <a class="text-slate-500 font-body text-xs uppercase tracking-widest hover:text-blue-600 hover:underline underline-offset-4 transition-all" href="#">Privacy</a>
     </div>
     <div class="text-slate-500 font-body text-[10px] uppercase tracking-[0.2em] text-center md:text-right">

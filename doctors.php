@@ -125,13 +125,7 @@
     <?php endforeach; ?>
   </div>
 
-  <!-- Load More -->
-  <div class="mt-20 flex justify-center">
-    <button class="group flex items-center gap-3 px-8 py-4 bg-surface-container-high rounded-full hover:bg-surface-container-highest transition-all">
-      <span class="text-sm font-bold uppercase tracking-widest text-on-surface">Explore More Faculty</span>
-      <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
-    </button>
-  </div>
+ 
 </main>
 
 <!-- Footer -->
@@ -139,7 +133,7 @@
   <div class="flex flex-col md:flex-row justify-between items-center px-12 gap-8 max-w-[1440px] mx-auto">
     <div class="font-headline font-black text-slate-400">© 2026 University Clinical Standard. The Disciplined Curator System.</div>
     <div class="flex gap-10 font-body text-xs uppercase tracking-widest font-medium">
-      <a class="text-slate-500 hover:text-blue-600 hover:underline underline-offset-4 transition-all duration-200" href="#">Contact Support</a>
+      <a class="text-slate-500 hover:text-blue-600 hover:underline underline-offset-4 transition-all duration-200" href="mailto:s230005904@seu.edu.sa">Contact Support</a>
       <a class="text-slate-500 hover:text-blue-600 hover:underline underline-offset-4 transition-all duration-200" href="#">Privacy</a>
     </div>
   </div>

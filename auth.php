@@ -171,7 +171,7 @@ unset($_SESSION['register_errors'], $_SESSION['login_errors'], $_SESSION['regist
   <div class="flex flex-col md:flex-row justify-between items-center px-12 gap-8 max-w-[1440px] mx-auto">
     <div class="font-headline font-black text-slate-400">© 2026 University Clinical Standard. The Disciplined Curator System.</div>
     <div class="flex flex-wrap justify-center gap-8">
-      <a class="font-body text-xs uppercase tracking-widest text-slate-500 hover:text-blue-600 transition-all hover:underline underline-offset-4" href="#">Contact Support</a>
+      <a class="font-body text-xs uppercase tracking-widest text-slate-500 hover:text-blue-600 transition-all hover:underline underline-offset-4" href="mailto:s230005904@seu.edu.sa">Contact Support</a>
       <a class="font-body text-xs uppercase tracking-widest text-slate-500 hover:text-blue-600 transition-all hover:underline underline-offset-4" href="#">Privacy</a>
     </div>
   </div>

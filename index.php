@@ -322,7 +322,7 @@
   <div class="flex flex-col md:flex-row justify-between items-center px-6 md:px-12 gap-8 max-w-[1440px] mx-auto">
     <div class="font-headline font-black text-slate-400 text-2xl tracking-tighter">CLINIC SCHOLAR</div>
     <div class="flex flex-wrap justify-center gap-8 font-body text-xs uppercase tracking-widest">
-      <a href="#" class="text-slate-500 hover:text-blue-600 underline-offset-4 hover:underline transition-all duration-200">Contact Support</a>
+      <a href="mailto:s230005904@seu.edu.sa" class="text-slate-500 hover:text-blue-600 underline-offset-4 hover:underline transition-all duration-200">Contact Support</a>
       <a href="doctors.php" class="text-slate-500 hover:text-blue-600 underline-offset-4 hover:underline transition-all duration-200">Our Doctors</a>
       <a href="#" class="text-slate-500 hover:text-blue-600 underline-offset-4 hover:underline transition-all duration-200">Medical Disclosure</a>
       <a href="#" class="text-slate-500 hover:text-blue-600 underline-offset-4 hover:underline transition-all duration-200">Privacy</a>
